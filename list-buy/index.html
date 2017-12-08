@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.fl{
+	            float: left;
+        }
+        .fr{
+            float: right;
+        }
+       blockquote, body, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, img, input, li, ol, p, table, td, textarea, th, ul {
+            margin: 0;
+            padding: 0;
+        }
+       .clearfix{
+          zoom: 1;
+       }
+        .clearfix:after {
+            clear: both;
+        }
+        .clearfix:after {
+            content: '.';
+            display: block;
+            overflow: hidden;
+            visibility: hidden;
+            font-size: 0;
+            line-height: 0;
+            width: 0;
+            height: 0;
+        }
+        a{
+            text-decoration: none;
+            color: #333;
+        }
+        img{vertical-align: middle;}
+
+		.wrap {
+			width: 1000px;
+			/*height: 640px;*/
+			border: 1px solid #000;
+			border-top: 3px solid orange;
+			margin: 50px auto;
+		}
+
+		h3 {
+			height: 50px;
+			line-height: 50px;
+			margin-left: 20px;
+			color: orange;
+		}
+
+		.title {
+			width: 1000px;
+			text-align: center;
+			height: 50px;
+			background-color: #eee;
+			line-height: 50px;
+
+		}
+
+		.title span:nth-child(1) {
+			margin-top: 15px;
+			margin-right: 5px;
+			width: 23px;
+			height: 22px;
+			background: url(articlex.png) no-repeat;
+			/*background: url(articlex.png) no-repeat 0 -30px;*/
+		}
+		/*.title label:nth-child(2) {
+			width: 50px;
+		}*/
+		.title span:nth-child(1).bac {
+			background: url(articlex.png) no-repeat 0 -20px;
+		}
+		.title span:nth-child(3) {
+			width: 300px;
+		}
+		.title .titlebox {
+			width: 160px;
+		}
+		.items .item {
+			line-height: 100px;
+			width: 920px;
+			height: 100px;
+			padding: 50px 0 50px 15px;
+			/*background-color: pink;*/
+		}
+
+		.item span:nth-child(1) {
+			/*line-height: 100px;*/
+			margin-top: 40px;
+			width: 23px;
+			height: 22px;
+			background: url(articlex.png) no-repeat;
+
+		}
+		.item span:nth-child(1).bac {
+			background: url(./images/articlex.png) no-repeat 0 -20px;
+		}
+
+		.item .pic {
+			margin-left: 30px;
+			width: 100px;
+			height: 100px;
+			background-color: #f1e3e3;
+	 	}
+
+	 	.item .info {
+	 		padding-top: 10px;
+	 		width: 207px;
+	 		height: 90px;
+
+	 	}
+
+	 	.item .info p {
+	 		line-height: 20px;
+	 		font-size: 13px;
+	 	}
+
+	 	.item .number {
+	 		margin-top: 35px;
+	 		margin-left:20px;
+	 		display: flex;
+	 		border: 1px solid #000;
+	 		width: 100px;
+	 		height: 30px;
+	 		line-height: 30px;
+	 	}
+
+	 	.item .number a {
+	 		flex: 1;
+	 		text-align: center;
+	 		 
+	 		background-color: #c5c3c3;
+	 	}
+
+	 	.item .number .ipt {
+	 		/*flex: 1;*/
+	 		text-align: center;
+	 		width: 20px;
+	 	}
+
+	 	.item .price {
+	 		color: orange;
+	 		margin-left: 60px;
+	 	} 
+
+	 	.item .price-more {
+	 		color: orange;
+	 		margin-left: 100px;
+	 	} 
+
+		.footer {
+			width: 1000px;
+			height: 50px;
+			background-color: #eee;
+			line-height: 50px;
+			text-align: center;
+		}
+
+		.footer a:nth-child(1) {
+			width: 200px;
+			/*background-color: pink;*/
+
+		}
+
+		.footer a:nth-child(1) span {
+			background-color: #ffa500;
+			display: inline-block;
+			line-height: normal;
+			border-radius: 5px;
+			width: 110px;
+			height: 25px;
+		}
+
+		.footer a:nth-child(2) {
+			width: 200px;
+		}
+
+		.footer span:nth-child(3) {
+			width: 220px;
+			margin-left: 30px;
+		}
+
+		.footer span:nth-child(3) i {
+			color: orange;
+			font-style:normal;
+		}
+
+		.footer a:nth-child(4) {
+			width: 120px;
+		}
+		.footer a:nth-child(5) {
+			width: 70px;
+			font-size: 16px;
+			background-color: orange;
+		}
+
+		.follow {
+			height: 80px;
+			line-height: 80px;
+			padding-top: 20px;
+		}
+
+		.follow a {
+			display: block;
+			margin-left: 50px;
+			line-height: 50px;
+			width: 100px;
+			height: 50px;
+			background-color: pink;
+			border-radius: 10px;
+			text-align: center;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="wrap bdtop" id="wrap">
+		<h3>购物清单</h3>
+		<div class="title clearfix">
+			<span class="fl" :class="{'bac':isSelectAll}" v-on:click="selectProduct(isSelectAll)"></span>
+			<span class="fl">全选</span>
+			<span class="fl">商品</span>
+			<span class="fl titlebox">数量</span>
+			<span class="fl titlebox">单价（元）</span>
+			<span class="fl titlebox">金额（元）</span>
+			<span class="fl titlebox">操作</span>
+		</div>
+		<div class="items">
+			<div class="item" v-for="(item,index) in productList">
+				<span class="fl" v-on:click="item.select=!item.select" :class="{'bac':item.select}"></span>
+				<a href="#" class="pic fl">产品{{index+1}}<img src="" alt=""></a>
+				<div class="info fl">
+					<p>{{item.pro_name}}</p>
+					<p>品牌：{{item.pro_brand}}&nbsp;&nbsp;产地：{{item.pro_place}}</p>
+					<p>规格/纯度:{{item.pro_purity}}&nbsp;&nbsp;起定量：{{item.pro_min}}</p>
+					<p>配送仓储：{{item.pro_depot}}</p>
+				</div>
+				<div class="number fl">
+					<a href="javascript:;" v-on:click="item.pro_num>0?item.pro_num--:0">-</a>
+					<input type="text" v-model="item.pro_num" class="ipt">
+					<a href="javascript:;" v-on:click="item.pro_num++">+</a>
+				</div>
+				<span class="price fl">￥{{item.pro_price}}</span>
+				<span class="price-more fl">￥{{item.pro_price*item.pro_num}}</span>
+				<a href="#" class="fr" v-on:click="deleteOneProduct(index)">删除</a>
+
+			</div>
+
+			 
+		</div>
+		<div class="footer clearfix">
+			<a href="#" class="fl delete" v-on:click="deleteProduct"><span>删除所选商品</span></a>
+			<a href="#" class="fl">继续购物</a>
+			<span  class="fl"><i>{{getTotal.totalNum}}</i>件商品总计（不含运费）</span>
+			<a  class="fl">总计￥<span style="color: orange">{{getTotal.totalPrice}}</span></a> 
+			<a href="#"  class="fr">去结算</a>
+		</div>
+
+		<div class="follow"><a href="">绑定跟单员</a></div>
+	</div>
+
+
+	<script src="https://unpkg.com/vue"></script>
+	<script>
+		new Vue({
+			el: '#wrap',
+			data: {
+				productList: [
+				{
+					'pro_name': '【大宝】甘油 | 丙三醇',//产品名称
+	                'pro_brand': 'skc',//品牌名称
+	                'pro_place': '韩国',//产地
+	                'pro_purity': '99.1%',//规格
+	                'pro_min': "25千克",//最小起订量
+	                'pro_depot': '高新区仓海仓储',//所在仓库
+	                'pro_num': 2,//数量
+	                'pro_price': 1000//单价
+	                 
+				},
+				{
+					'pro_name': '【宝宝霜】甘油 | 丙三醇',//产品名称
+	                'pro_brand': 'skc',//品牌名称
+	                'pro_place': '中国',//产地
+	                'pro_purity': '99.8%',//规格
+	                'pro_min': "15千克",//最小起订量
+	                'pro_depot': '犀浦仓海仓储',//所在仓库
+	                'pro_num': 2,//数量
+	                // 'pro_img': '../../images/ucenter/testimg.jpg',//图片链接
+	                'pro_price': 400//单价
+	                 
+				},
+				{
+					'pro_name': '【护手霜】甘油 | 丙三醇',//产品名称
+	                'pro_brand': 'skc',//品牌名称
+	                'pro_place': '日本',//产地
+	                'pro_purity': '96.7%',//规格
+	                'pro_min': "21千克",//最小起订量
+	                'pro_depot': '成都仓海仓储',//所在仓库
+	                'pro_num': 1,//数量
+	                'pro_price': 200//单价
+	                 
+				}
+				]
+			},
+			//计算属性 根据data值得变化会发声变化
+			computed: {
+				isSelectAll: function() {
+					//every的用法 全部符合返回true 有一个不符合，返回false
+					return this.productList.every(function(val){
+						return val.select
+					})
+				},
+				getTotal:function(){
+			        //获取productList中select为true的数据。filter返回的是 返回值为true的值
+			        var _proList=this.productList.filter(function (val) { return val.select});
+			        var	totalPrice=0;
+			        for(var i=0; i<_proList.length;i++){
+			            totalPrice+=_proList[i].pro_num*_proList[i].pro_price;
+			        }
+			        //选择产品的件数就是_proList.length，总价就是totalPrice
+			        return {totalNum:_proList.length,totalPrice:totalPrice}
+			    }
+
+			},
+			methods: {
+				selectProduct:function(isSelectAll){
+					for (var i = 0; i < this.productList.length; i++) {
+						 this.productList[i].select = !isSelectAll
+					}
+				},
+				deleteProduct: function() {
+					this.productList = this.productList.filter(function(val) {
+						return !val.select;
+					})
+				},
+				deleteOneProduct: function(index) {
+					this.productList.splice(index,1);
+				}
+			},
+			mounted: function () {
+		      
+		        var _this=this;
+		        //为productList添加select（是否选中）字段，初始值为true
+		        this.productList.map(function (item) {
+		            _this.$set(item, 'select', true);
+		        })
+		        //要像上面这样写双向绑定才能起效，下面的写法是有问题的，双向绑定不起效的！
+		        //this.productList.map(function (item) {item.select=true})
+    		} 
+		})
+	</script>
+</body>
+</html>

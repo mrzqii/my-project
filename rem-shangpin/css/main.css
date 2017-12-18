@@ -1,0 +1,417 @@
+body,p,h1,h2,h3,h4,ul,dl,dd,input,form,select{
+	margin: 0;
+	padding: 0;
+}
+
+h1,h2,h3,h4 {
+	font-size: 100%;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	border: 0
+}
+
+em {
+	font-style: normal;
+}
+
+.clearfix:before,.clearfix:after{
+	content: "";
+	display: table;
+}
+
+.clearfix:after{
+	clear: both;
+}
+.clearfix{
+	zoom:1
+}
+
+.fl{
+	float: left;
+}
+
+.fr{
+	float: right;
+}
+
+html {
+	font-family: "微软雅黑";
+}
+
+.main-wrap {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: #e6e2e2;
+}
+
+.header{
+	height: 2.5rem;
+	width: 100%;
+	background-color: #5bc5a6;
+}
+
+.header .logo {
+	width: 4.45rem;
+	height: 1.75rem;
+ 	margin-left: 1.0rem;
+ 	margin-top: 0.5rem;
+	background: url(../images/logo3.png);
+	background-size: cover;
+	float: left;
+	
+}
+
+.header .head-search{
+	width: 12.0rem;
+	float: right;
+	margin-top: 0.5rem;
+	position: relative;
+	
+
+	
+}
+
+.header .head-search .i1 {
+	position: absolute;
+	top: 0.4rem;
+	left: 0.5rem;
+	color: #4c6175;
+}
+.header .head-search .i2 {
+	position: absolute;
+	top: 0.3rem;
+	right: 0.6rem;
+	font-size: 18px;
+	color: #4c6175;
+}
+
+.header .head-search input {
+	width: 10.0rem;
+	height: 1.5rem;
+	background-color: #89e3c8;
+	outline: 0;
+	border: none;
+	border-radius: 0.25rem;
+	text-indent: 2.5rem;
+	color: white;
+}
+
+/*内容区*/
+
+.content {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 2.5rem;
+	bottom: 2.5rem;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+/*轮播*/
+.slide {
+	position: relative;
+	width: 18.75rem;	
+}
+.show {
+	width: 18.75rem;
+	overflow: hidden;
+	height: 7.25rem;
+}
+
+
+.show a img {
+	width: 18.75rem;
+}
+
+
+/*分类*/
+ .category{
+ 	margin-top: 10px;
+ 	background-color: white;
+
+ }
+
+.category ul li {
+	float: left;
+	box-sizing: border-box;
+	width: 4.65rem;
+	height: 4.65rem;
+}
+.category ul li:hover {
+	/*width: 4.65rem;
+	height: 4.65rem;
+	padding: 0.6rem;*/
+	/*box-shadow: 2px 2px;*/
+}
+
+.category ul a {
+	margin-top: 0.5rem;
+	display: block;
+	width: 4.65rem;
+	height: 2.75rem;
+	background: url(../images/icons.png) no-repeat 0.75rem -2.95rem;
+	background-size: 3.0rem 42.0rem;
+}
+
+.category ul li:nth-child(2) a {
+	background-position: 0.75rem -6rem
+}
+.category ul li:nth-child(3) a {
+	background-position: 0.75rem -9rem
+}
+.category ul li:nth-child(4) a {
+	background-position: 0.75rem -12rem
+}
+.category ul li:nth-child(5) a {
+	background-position: 0.75rem -15rem
+}
+.category ul li:nth-child(6) a {
+	background-position: 0.75rem -18rem
+}
+.category ul li:nth-child(7) a {
+	background-position: 0.75rem -21rem
+}
+.category ul li:nth-child(8) a {
+	background-position: 0.75rem -24rem
+}
+.category ul h4 {
+	margin-top: 0.25rem;
+	margin-left: 1.35rem;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	color: grey;
+}
+
+/*news*/
+.news{
+	height: 2.0rem;
+	background-color: white;
+	border-top: 0.5px solid grey;
+	border-bottom: 0.5px solid grey;
+}
+.news-name {
+	margin-top: 0.35rem;
+	height: 1.25rem;
+	width: 6.1rem;
+	background: url(../images/news.png) no-repeat left -0.3rem;
+	background-size: 6.1rem 1.75rem;
+	border-right: 1px solid grey;
+}
+ 
+.news .news-content{
+	/*background-color: #eee;*/
+	text-align: center;
+	/*line-height: height: 2.0rem;*/
+	overflow: hidden;
+	margin-left: 0.5rem;
+	width: 12rem;
+	height: 2.0rem;
+	color: black;
+}
+
+.news .news-content i {
+	margin-top: 0.35rem;
+	display: inline-block;
+	width: 2.25rem;
+	height: 1.15rem;
+	border: 1px solid red;
+	text-align: center;
+	line-height: 1.05rem;
+	font-size: 0.8rem;
+	border-radius: 0.3rem;
+	text-align: center;
+	color: red;
+}
+.news .news-content a {
+	color: black;
+	font-size: 15px;
+	margin-left: 0.6rem;
+}
+
+/*新鲜水果*/
+.fruit{
+	
+	background-color: white;
+	margin-top: 0.5rem;
+	
+}
+.fruit .fruit-bar {
+	height: 2.0rem;
+	line-height: 2.0rem;
+}
+.fruit .fruit-bar span {
+	float: left;
+	line-height: 1.0rem;
+	font-size: 18px;
+	font-weight: bold;
+	border-left: 0.3rem solid #f8589c;
+	text-indent: 0.25rem;
+	margin-left: 0.5rem;
+	margin-top: 0.5rem;
+
+	color: #f8589c;
+}
+.fruit .fruit-bar a {
+	margin-right: 0.25rem;
+	float: right;
+	color: #f8589c;
+	font-size: 18px;
+}
+
+.fruit .fruit-pic {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.fruit .fruit-pic a {
+	width: 100%;
+}
+
+.fruit .fruit-pic img {
+	width: 100%;
+
+}
+
+.fruit ul{
+	width: 100%;
+	margin-top: 0.5rem;
+}
+.fruit ul li {
+	float: left;
+	width: 6.25rem;
+	height: 9.0rem;
+	background-color: white;
+	border-right: 0.05rem solid grey;
+	position: relative;
+	
+}
+.fruit ul li:nth-child(3) {
+	border-right: 0;
+}
+
+.fruit ul li a{
+	display: block;
+	width: 4.5rem;
+	height: 4.5rem;
+	margin-left: 0.85rem;
+	margin-top: 0.35rem;
+}
+.fruit ul li img{
+	width: 4.5rem;
+	height: 4.5rem;
+}
+
+.fruit ul li p {
+	width: 5.0rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font:15px/15px "微软雅黑";
+	color: #666;
+	margin: 5px 0 0 0.9rem;
+}
+
+.fruit ul li .fruit-unit {
+	 font-size: 12px;
+	 margin-top: 0.5rem;
+}
+
+.fruit ul li .fruit-price {
+	font-size: 13px;
+	color: #ff4400;
+}
+
+.fruit ul li .plus {
+	position: absolute;
+	right: 0.675rem;
+	bottom: 0.85rem;
+	width: 1.7rem;
+	height: 1.7rem;
+	background: url(../images/icons.png) no-repeat 0 -27.0rem;
+	background-size: 3.0rem 42.0rem;
+}
+.time {
+	height: 2rem;
+	width: 100%;
+}
+
+.time .con{
+	height: 2rem;
+	margin-left: 1rem;
+	line-height: 2rem;
+	font-size: 13px;
+	color: grey;
+}
+.time img {
+	width: 4.65rem;
+}
+.timer {
+	margin-right: 2rem;
+	color: red;
+	height: 2rem;
+}
+.timer span {
+	height: 2rem;
+	line-height: 2rem;
+	margin: 0.5rem;
+	color: #fff;
+	background-color: #000;
+}
+
+
+/*底部*/
+.footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2.5rem;
+}
+
+.footer a {
+
+	display: inline-block;
+	width: 4.45rem;
+	height: 100%;
+}
+
+.footer a span {
+	margin: 0.25rem 0 0 1.6rem;
+	display: block;
+	width: 1.5rem;
+	height: 1.5rem;
+	background: url(../images/icons.png) no-repeat 0 -30.0rem;
+	background-size: 3.0rem 42.0rem;
+}
+.footer a:nth-child(2) span {
+	background: url(../images/icons.png) no-repeat 0 -33.0rem;
+	background-size: 3.0rem 42.0rem;
+}
+.footer a:nth-child(3) span {
+	background: url(../images/icons.png) no-repeat 0 -36.0rem;
+	background-size: 3.0rem 42.0rem;
+}
+.footer a:nth-child(4) span {
+	background: url(../images/icons.png) no-repeat 0 -39.0rem;
+	background-size: 3.0rem 42.0rem;
+}
+
+.footer a p {
+	font-size: 12px;
+	line-height: 0.6rem;
+	margin-left: 1.7rem;
+}
+
+

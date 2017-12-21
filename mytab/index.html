@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<title>MY-PROJECT</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+
+<div class="wrap" >
+	<div class="logo" >
+	 <h1><a href="#"><img src="images/1.jpg"></a></h1>
+	</div>
+
+    <div class="logo-phone">
+     <h1><a href="#"><img src="images/2.jpg"></a></h1>
+    </div>
+	<p>青春是学习的季节，青春是奋斗的岁月，不要停止我们前进的步伐，因为青春的路正长。有空的时候静下心来好好看看书，回头想想自己走过的路，为自己的人生做好一个规划，把自己的理想铭刻在心中，做一个甘于寂寞，敢于创新、干劲十足的年青人。我们要抓住金色青春，让人生中留下永恒的光辉!</p>
+
+</div>
+<div class="nav-main">
+<div class="nav-box">
+<div class="nav">
+  <ul class="nav-ul">
+  	<li class="bacc"><a href="#" class="home"><span> </span></a></li>
+  	<li><a href="#" class="develop"><span>仿小米</span></a></li>
+  	<li><a href="#" class="wechat"><span>移动端网站</span></a></li>
+  	<li><a href="#" class="case"><span>响应式网站</span></a></li>
+  	<li><a href="#" class="news"><span>bootstrap网站</span></a></li>
+  	<li><a href="#" class="contact"><span>小游戏</span></a></li>
+  </ul>
+</div>
+<div class="nav-slide">
+    <div class="nav-slide-o"></div>
+    <div class="nav-slide-o">
+    	<ul>
+            <li><a href="#"><span>1：PC端</span></a></li>
+    		<li><a href="#"><span>2：模仿小米官网</span></a></li>
+    		<li><a href="#"><span>3：jQuery做了部分特效</span></a></li>
+    		<li><a href="https://mrzqii.github.io/myproject/xiaomi" target="_blank"><span class="font-color">点击查看DEMO</span></a></li>
+    		<li><a href="https://github.com/mrzqii/myproject/tree/master/xiaomi" target="_blank"><span>点击查看源码</span></a></li>
+    		<li><a href="#"><span>待续..</span></a></li>
+    	 
+    	</ul>
+    </div>
+    <div class="nav-slide-o">
+    	<ul>
+    		<li><a href="#"><span>1：纯移动端</span></a></li>
+    		<li><a href="#"><span>2：采用rem布局</span></a></li>
+    		<li><a href="#"><span>3：移动端全适配</span></a></li>
+    		<li><a href="#"><span>4：swipper做了特效</span></a></li>
+    		<li><a href="https://mrzqii.github.io/myproject/rem-shangpin" target="_blank"><span class="font-color">点击查看DEMO</span></a></li>
+    		<li><a href="https://github.com/mrzqii/myproject/tree/master/rem-shangpin" target="_blank"><span>点击查看源码</span></a></li>
+    		<li><a href="#"><span>待续...</span></a></li>
+    	</ul>
+    </div>
+    <div class="nav-slide-o">
+    	<ul>
+    		<li><a href="#"><span>1：响应式布局</span></a></li>
+    		<li><a href="#"><span>2：jQuery做的特效</span></a></li>
+            <li><a href="#"><span>3：媒体查询做的响应式</span></a></li>
+    		<li><a href="#"><span>4：适配PC、移动端</span></a></li>
+    		<li><a href="https://mrzqii.github.io/myproject/pstudio" target="_blank"><span class="font-color">点击查看DEMO</span></a></li>
+    		<li><a href="https://github.com/mrzqii/myproject/tree/master/pstudio" target="_blank"><span>点击查看源码</span></a></li>
+    		<li><a href="#"><span>待续...</span></a></li>
+    	</ul>
+    </div>
+    <div class="nav-slide-o">
+    	<ul>
+    		<li><a href="#"><span>1：响应式布局</span></a></li>
+    		<li><a href="#"><span>2：使用bootstrap</span></a></li>
+    		<li><a href="#"><span>3：适配PC、移动端</span></a></li>
+    		<li><a href="https://mrzqii.github.io/myproject/hepinweishi" target="_blank"><span class="font-color">点击查看DEMO</span></a></li>
+    		<li><a href="https://github.com/mrzqii/myproject/tree/master/hepinweishi" target="_blank"><span>点击查看源码</span></a></li>
+    		<li><a href="#"><span>待续...</span></a></li>
+     
+    	</ul>
+    </div>
+    <div class="nav-slide-o">
+        <ul>
+            <li><a href="#"><span>1：原生js编写的</span></a></li>
+           <!--  <li><a href="#"><span>2：使用bootstrap</span></a></li>
+            <li><a href="#"><span>3：适配PC、移动端</span></a></li> -->
+            <li><a href="https://mrzqii.github.io/myproject/xiaoxiaole" target="_blank"><span class="font-color">点击查看DEMO</span></a></li>
+            <li><a href="https://github.com/mrzqii/myproject/tree/master/xiaoxiaole" target="_blank"><span>点击查看源码</span></a></li>
+            <li><a href="#"><span>待续...</span></a></li>
+     
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+
+<script src="./js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+	var thisTime;
+	$('.nav-ul li').mouseleave(function(even){
+			thisTime	=	setTimeout(thisMouseOut,1000);
+	})
+
+	$('.nav-ul li').mouseenter(function(){
+		clearTimeout(thisTime);
+		var thisUB	=	$('.nav-ul li').index($(this));
+		if($.trim($('.nav-slide-o').eq(thisUB).html()) != "")
+		{
+			$('.nav-slide').addClass('hover');
+			$('.nav-slide-o').hide();
+			$('.nav-slide-o').eq(thisUB).show();
+		}
+		else{
+			$('.nav-slide').removeClass('hover');
+		}
+		
+	})
+	
+	function thisMouseOut(){
+		$('.nav-slide').removeClass('hover');
+	}
+	 
+	$('.nav-slide').mouseenter(function(){
+		clearTimeout(thisTime);
+		$('.nav-slide').addClass('hover');
+	})
+	$('.nav-slide').mouseleave(function(){
+		$('.nav-slide').removeClass('hover');
+	})
+
+})
+</script>
+</body>
+</html>

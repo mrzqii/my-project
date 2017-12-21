@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style type="text/css">
+		body {
+			background: #fff3cd;
+		}
+		#txt {
+			width: 400px;
+			height: 50px;
+			border: 0;
+			display: block;
+			background: #FFF3CD;
+			margin: auto;
+			text-align: center;
+			line-height: 50px;
+			font-size: 40px;
+			color: #00ffff;
+		}
+
+		.container {
+			width: 780px;
+			position: relative;
+			margin: 30px auto;
+		}
+		.tile {
+			width: 128px;
+			height: 128px;
+			position: absolute;
+		}
+
+		.tile img,
+		.tile .mask {
+			width: 100%;
+			height: 100%;
+		}
+
+		.tile .mask {
+			background: url("image/bg222.jpg");
+			position: absolute;
+			left: 0;
+			top: 0;
+			/*display: none;*/
+			transform: scaleX(1);
+			transform-origin: center;
+			animation: box 10s ;
+		}
+		@keyframes box {
+			0% {
+				transform: scaleX(1);
+			}
+			20% {
+				transform: scaleX(0);
+			}
+			90% {
+				transform: scaleX(0);
+			}
+			100% {
+				transform: scaleX(1);
+			}
+		}
+		.resethtml {
+			position: absolute;
+			left: 30%;
+			width: 100px;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			font-size: 20px;
+			color: #880c11;
+			z-index: 10;
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+<a href="" class="resethtml">再来一次</a>
+<input id="txt" type="text">
+<div id="container" class="container"></div>
+
+<script type="text/javascript">
+	var container = document.getElementById('container');
+
+	var mask = document.getElementsByClassName('mask');
+
+	function Tile(tLeft, tTop, type) {
+		this.create(type);
+		this.setPosition(tLeft, tTop);
+	}
+
+	Tile.prototype = {
+		type: 0,//标识当前的图案类型
+		target: null,//当前图案的HTML节点
+		isMatch: false,//是否已被消除
+		create: function (type) {
+			var _this = this;
+			var div = document.createElement('div');
+			var className = document.createAttribute('class');
+			className.value = 'tile';
+			div.setAttributeNode(className);
+			div.innerHTML = '\
+			<img src="image/12shengxiao' + type + '.png" alt="">\
+			<div class="mask"></div>';
+			container.appendChild(div);
+			_this.img = div.getElementsByTagName('img')[0];
+			_this.mask = div.getElementsByClassName('mask')[0];
+			_this.target = div;
+			_this.type = type;
+		},
+		setPosition: function (tLeft, tTop) {
+			var _this = this;
+			_this.target.style.left = tLeft + 'px';
+			_this.target.style.top = tTop + 'px'
+		},
+		show: function () {
+			var _this = this;
+			var i = 1;
+			var intervalId = setInterval(function () {
+				i -= 0.1;
+				_this.mask.style.transform = 'scaleX(' + i + ')';
+				if (i <= 0) {
+					_this.mask.style.transform = 'scaleX(0)';
+					clearInterval(intervalId);
+					showImg();
+				}
+			}, 10);
+			_this.img.style.transform = 'scaleX(0)';
+			function showImg() {
+				var i = 0;
+				var intervalId = setInterval(function () {
+					i += 0.1;
+					_this.img.style.transform = 'scaleX(' + i + ')';
+					if (i >= 1) {
+						_this.img.style.transform = 'scaleX(1)';
+						clearInterval(intervalId);
+					}
+				}, 10);
+			}
+		},
+		hide: function () {
+			var _this = this;
+			var i = 1;
+			var intervalId = setInterval(function () {
+				i -= 0.1;
+				_this.img.style.transform = 'scaleX(' + i + ')';
+				if (i <= 0) {
+					_this.img.style.transform = 'scaleX(0)';
+					clearInterval(intervalId);
+					showMask();
+				}
+			}, 10);
+			_this.mask.style.transform = 'scaleX(0)';
+			function showMask() {
+				var i = 0;
+				var intervalId = setInterval(function () {
+					i += 0.1;
+					_this.mask.style.transform = 'scaleX(' + i + ')';
+					if (i >= 1) {
+						_this.mask.style.transform = 'scaleX(1)';
+						clearInterval(intervalId);
+					}
+				}, 10);
+			}
+		},
+		remove: function () {
+			var _this = this;
+			container.removeChild(_this.target);
+		}
+	};
+
+	var tileTypeArr = [];
+	for (var i = 1; i <= 12; i++) {
+		tileTypeArr.push(i);
+		tileTypeArr.push(i);
+	}
+	console.log(tileTypeArr);
+
+	var tileArr = [];
+	for (var i = 0; i < 4; i++) {
+		for (var j = 0; j < 6; j++) {
+			//给每个对象tile添加top left 的值，确定他们每个对象的type值
+			var tile = new Tile(j * 128 + 2 * j, i * 128 + 2 * i, tileTypeArr.splice(tileTypeArr.length * Math.random(), 1)[0]);
+			tileArr.push(tile);
+		}
+	}
+
+	for (var i in tileArr) {
+		tileArr[i].target.addEventListener('click', onClickTile);
+	}
+
+
+
+	var firstTile = null;
+	var isAnimation = true;
+
+	//开场倒计时
+	daoJiShi();
+	function daoJiShi() {
+		var txt = document.getElementById('txt');
+		var i = 9;
+		txt.value = '你可以看' +  i + '秒';
+		var intervalId = setInterval(function () {
+			i--;
+			txt.value = '你可以看' +  i + '秒';
+			if (i < 0) {
+				clearInterval(intervalId);
+				txt.value = '';
+			}
+		}, 1000);
+	}
+	setTimeout(function () {
+		isAnimation = false;
+		daoJiShi1();
+		function daoJiShi1() {
+			var txt = document.getElementById('txt');
+			var i = 60;
+			var intervalId = setInterval(function () {
+				i--;
+				txt.value = '还剩' + i + '秒';
+				if (i < 0) {
+					clearInterval(intervalId);
+					txt.value = 'GAME OVER';
+				}
+			}, 1000);
+		}
+	}, 10000);
+
+//	结束倒计时
+	// setTimeout(function () {
+	// 	isAnimation = true;
+	// }, 70000);
+
+
+
+	function onClickTile(e) {
+		if (isAnimation) {
+			return;
+		}
+		var target = e.currentTarget;
+		for (var i in tileArr) {//遍历tile数组
+			var tile = tileArr[i];//取出当前循环的tile对象
+			if (target == tile.target) {//判断tile对象中的target节点是否和当前被点击的节点一致
+				tile.show();
+				if (firstTile == null) {//第一次点击，把点击的tile对象缓存起来
+					firstTile = tile;
+				} //然后直接执行下面的break 跳出函数
+				else {
+					if (tile == firstTile) {//如果点击的还是上次的，就返回
+						return;
+					}
+					if (tile.type == firstTile.type) {//判断第二次点击的图案类型和第一次点击的图案类型是否一致
+						setTimeout(function () {
+							tile.remove();
+							firstTile.remove();
+							firstTile = null;
+							isAnimation = false;
+						}, 500);
+						isAnimation = true;
+					} else {
+						setTimeout(function () {
+							tile.hide();
+							firstTile.hide();
+							firstTile = null;
+							isAnimation = false;
+						}, 500);
+						isAnimation = true;
+					}
+				}
+				break;
+			}
+		}
+	}
+
+</script>
+</body>
+</html>

@@ -286,11 +286,21 @@ height: 240px;
 
 .font-color {
 	color: #e7e894;
+	font-weight: bold;
 }
 
 .bacc {
 	background: url(../images/3.png);
 	border-radius: 50%;
+}
+
+.tips {
+	position: fixed;
+	top: 320px;
+	left: 130px;
+}
+.tips img {
+	width: 200px;
 }
 
 @media screen and (max-width: 680px) {

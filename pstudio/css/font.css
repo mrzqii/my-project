@@ -1,0 +1,72 @@
+@font-face {
+    font-family: Helvetica;
+    src: url('../font/HelveticaNeueLTComLtCn.eot');
+    src: url('../font/HelveticaNeueLTComLtCn.eot?#iefix') format('embedded-opentype'),
+         url('../font/HelveticaNeueLTComLtCn.woff2') format('woff2'),
+         url('../font/HelveticaNeueLTComLtCn.woff') format('woff'),
+         url('../font/HelveticaNeueLTComLtCn.ttf') format('truetype'),
+         url('../font/HelveticaNeueLTComLtCn.svg#pf_din_text_comp_prolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+   
+}
+@font-face {
+    font-family: fzlt;
+    src: url('../font/fzlt.eot');
+    src: url('../font/fzlt.eot?#iefix') format('embedded-opentype'),
+         url('../font/fzlt.woff2') format('woff2'),
+         url('../font/fzlt.woff') format('woff'),
+         url('../font/fzlt.ttf') format('truetype'),
+         url('../font/fzlt.svg#pf_din_text_comp_prolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+   
+}
+@font-face {
+    font-family: fontlogo;
+    src: url('../font/fontlogo.eot');
+    src: url('../font/fontlogo.eot?#iefix') format('embedded-opentype'),
+         url('../font/fontlogo.woff2') format('woff2'),
+         url('../font/fontlogo.woff') format('woff'),
+         url('../font/fontlogo.ttf') format('truetype'),
+         url('../font/fontlogo.svg#pf_din_text_comp_prolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+   
+}
+@font-face {
+    font-family: antoniobold;
+    src: url('../font/antoniobold.eot');
+    src: url('../font/antoniobold.eot?#iefix') format('embedded-opentype'),
+         url('../font/antoniobold.woff2') format('woff2'),
+         url('../font/antoniobold.woff') format('woff'),
+         url('../font/antoniobold.ttf') format('truetype'),
+         url('../font/antoniobold.svg#pf_din_text_comp_prolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+   
+}
+@font-face {
+    font-family: antoniolight;
+    src: url('../font/antoniolight.eot');
+    src: url('../font/antoniolight.eot?#iefix') format('embedded-opentype'),
+         url('../font/antoniolight.woff2') format('woff2'),
+         url('../font/antoniolight.woff') format('woff'),
+         url('../font/antoniolight.ttf') format('truetype'),
+         url('../font/antoniolight.svg#pf_din_text_comp_prolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+   
+}
+@font-face {
+    font-family: antonioregular;
+    src: url('../font/antonioregular.eot');
+    src: url('../font/antonioregular.eot?#iefix') format('embedded-opentype'),
+         url('../font/antonioregular.woff2') format('woff2'),
+         url('../font/antonioregular.woff') format('woff'),
+         url('../font/antonioregular.ttf') format('truetype'),
+         url('../font/antonioregular.svg#pf_din_text_comp_prolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+   
+}

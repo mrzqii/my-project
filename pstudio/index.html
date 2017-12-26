@@ -281,7 +281,7 @@
             <div class="foot">
                 <div class="box">
                     <div class="fl">
-                        <p>© 2014 PSTUDIO All Rights Reserved. 蜀ICP备12001214</p>
+                        <p>© 2017 PSTUDIO All Rights Reserved. 蜀ICP备12001214</p>
                         &nbsp;&nbsp;&nbsp;
                         <p>
                             <a href="#" target="_blank">B2视觉</a>
@@ -304,11 +304,7 @@
                 </div>
             </div>
         </div>
-        <script
-          src="https://code.jquery.com/jquery-1.12.4.min.js"
-          integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-          crossorigin="anonymous">
-        </script>
+      <script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
         <script>
             var workData = [{
                 pid: 0,
@@ -486,10 +482,10 @@
             //客户填写信息
             jQuery(function() {
                 var regBox = {
-                    regEmail: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,
-                    regTel: /(^0?1[3|4|5|8][0-9]\d{8}$)|(^0[\d]{2,3}-[\d]{7,8}$)/,
+                    regTel: /(^0?1[3|4|5|8][0-9]\d{8}$)|(^0[\d]{2,3}-[\d]{7,8}$)/
                 };
                 jQuery("#submit").click(function() {
+                    console.log(111)
                     var namesobj = jQuery("#names");
                     var telsobj = jQuery("#tels");
                     var contetnsobj = jQuery("#contents");
@@ -512,7 +508,38 @@
                         contetnsobj.focus();
                         return;
                     }
+
+                    jQuery.ajax({
+                        type: "POST",
+                        url: "login.php",
+                        data: {
+                            Names: namesobj.val(),
+                            TEl: telsobj.val(),
+                            Content: contetnsobj.val()
+                        },
+                        dataType: "json",
+                        cache: true,
+                        beforeSend: function() {
+                            jQuery("#submit").val("SENDING...")
+                        },
+                        success: function(data) {
+                            if (data.type == "yes") {
+                                jQuery("#submit").val("SUCCESS").attr("disabled", "disabled");
+                                jQuery("#submit").unbind("click");
+                                setTimeout(function() {
+                                    jQuery("#submit").val("SENDED")
+                                .css({
+                                    "background": "#C0BDBD",
+                                    "cursor": "not-allowed",
+                                    "color": "#fff"
+                                })}, 2800);
+                            } 
+              
+                        }
+                    
+                    })
                 });
+     
             })
         </script>
     </body>

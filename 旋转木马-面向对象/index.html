@@ -121,15 +121,15 @@
 						}'>
 		<div class="poster-btn poster-prev-btn"></div>
 		<ul class="poster-list">
-			<li class="poster-item"><a href="#"><img src="./images/1.jpg" alt=""></a></a></li>
-			<li class="poster-item"><a href="#"><img src="./images/2.jpg" alt=""></a></a></li>
-			<li class="poster-item"><a href="#"><img src="./images/3.jpg" alt=""></a></a></li>
-			<li class="poster-item"><a href="#"><img src="./images/4.jpg" alt=""></a></a></li>
-			<li class="poster-item"><a href="#"><img src="./images/5.jpg" alt=""></a></a></li>
-				<li class="poster-item"><a href="#"><img src="./images/6.jpg" alt=""></a></a></li>
-			<li class="poster-item"><a href="#"><img src="./images/7.jpg" alt=""></a></a></li>
-			<li class="poster-item"><a href="#"><img src="./images/8.jpg" alt=""></a></a></li>
-			<li class="poster-item"><a href="#"><img src="./images/9.jpg" alt=""></a></a></li>
+			<li class="poster-item"><a href="#"><img src="./images/1_min.jpg" alt=""></a></a></li>
+			<li class="poster-item"><a href="#"><img src="./images/2_min.jpg" alt=""></a></a></li>
+			<li class="poster-item"><a href="#"><img src="./images/3_min.jpg" alt=""></a></a></li>
+			<li class="poster-item"><a href="#"><img src="./images/4_min.jpg" alt=""></a></a></li>
+			<li class="poster-item"><a href="#"><img src="./images/5_min.jpg" alt=""></a></a></li>
+				<li class="poster-item"><a href="#"><img src="./images/6_min.jpg" alt=""></a></a></li>
+			<li class="poster-item"><a href="#"><img src="./images/7_min.jpg" alt=""></a></a></li>
+			<li class="poster-item"><a href="#"><img src="./images/8_min.jpg" alt=""></a></a></li>
+			<li class="poster-item"><a href="#"><img src="./images/9_min.jpg" alt=""></a></a></li>
 			 
 		</ul>
 		<div class="poster-btn poster-next-btn"></div>
@@ -144,14 +144,14 @@
 
 			
 			Carousel.init($(".J_Poster"));
-			var test = /_min\./
-			//遍历所有的图片节点
-			$("img").each(function(index,obj){	
-				if(test.test($(this).attr("src"))){
-					var reSrc = $(this).attr("src").replace(test,".");
-					$(this).attr("src",reSrc)
-				}		
-			})
+			// var test = /_min\./
+			// //遍历所有的图片节点
+			// $("img").each(function(index,obj){	
+			// 	if(test.test($(this).attr("src"))){
+			// 		var reSrc = $(this).attr("src").replace(test,".");
+			// 		$(this).attr("src",reSrc)
+			// 	}		
+			// })
 
  
 

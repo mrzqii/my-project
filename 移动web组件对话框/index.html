@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!--删除苹果默认的工具栏和菜单栏-->
+  	<meta name="apple-mobile-web-app-capable" content="yes">
+  	<!--设置苹果工具栏颜色-->
+  	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+  	<!--忽略页面中的数字识别为电话-->
+  	<meta name="format-detection" content="telephone=no,email=no">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+
+		.dialog-mask {
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+			background-color: rgba(0,0,0,0.5);
+			display: flex;
+			 display: -webkit-flex;
+			justify-content: center;
+			-webkit-justify-content: center;
+			align-items: center;
+			-webkit-align-items: center;
+		}
+
+		.dialog-win {
+			min-width: 180px;
+			border-radius: 4px;
+			padding: 10px 5px;
+			background-color: rgba(0,0,0,0.8);
+			transition:all .3s cubic-bezier(0, 0, 0.1, 1.08);
+			-webkit-transition:all .3s cubic-bezier(0, 0, 0.1, 1.08);
+		}
+
+		.dialog-win .win-header {
+			margin: 0 auto;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			border: 1px solid #fff;
+			display: flex;
+			display: -webkit-flex;
+			justify-content: center;
+			-webkit-justify-content: center;
+			align-items: center;
+			-webkit-align-items: center;
+		}
+		.dialog-win .win-header.warning {
+			transform: rotate(90deg);
+		}
+
+		.dialog-win .win-header.warning:before {
+			content: "";
+			display: block;
+			width: 20px;
+			height: 5px;
+			background-color: #fff
+		}
+
+		.dialog-win .win-header.warning:after {
+			content: "";
+			display: block;
+			margin-left: 5px;
+			width: 5px;
+			height: 5px;
+			background-color: #fff
+		}
+
+		.dialog-win .win-header.ok:before {
+			content: "";
+			display: block;
+			width: 30px;
+			height: 10px;
+			border: 1px solid #fff;
+			border-top: none;
+			border-right: none;
+			transform: rotate(-50deg);
+			-webkit-transform: rotate(-50deg);
+		}
+
+		.dialog-win .win-header.waiting:before {
+			content: "";
+			display: block;
+			width: 8px;
+			height: 8px;
+			background: green;
+			border-radius: 50%;
+			animation: waiting1 0.5s infinite;
+			 
+		}
+		@keyframes waiting1 {
+			0% {
+				transform: translate(-5px,0);
+				-webkit-transform: translate(-5px,0);
+			}
+
+			50% {
+				transform: translate(10px,0);
+				-webkit-transform: translate(10px,0);
+
+			}
+
+			0% {
+				transform: translate(-5px,0);
+				-webkit-transform: translate(-5px,0);
+
+
+			}
+		}
+
+		.dialog-win .win-header.waiting:after {
+			content: "";
+			display: block;
+			width: 8px;
+			height: 8px;
+			background: red;
+			border-radius: 50%;
+			animation: waiting2 0.5s infinite;
+			 
+		}
+
+		@keyframes waiting2 {
+			0% {
+				transform: translate(5px,0);
+				-webkit-transform: translate(5px,0);
+			}
+
+			50% {
+				transform: translate(-10px,0);
+				-webkit-transform: translate(-10px,0);
+			}
+
+			0% {
+				transform: translate(5px,0);
+				-webkit-transform: translate(5px,0);
+			}
+		}
+
+		.dialog-win .win-content {
+			text-align: center;
+			font-size: 12px;
+			color: #fff;
+			margin: 10px auto;
+		}
+
+		.dialog-win .win-footer {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.dialog-win .win-footer button {
+			margin: 0 5px;
+			border: none;
+			padding: 7px 14px;
+			border-radius: 3px;
+			font-family: "微软雅黑";
+		}
+
+		.dialog-win .win-footer button.red {
+			background-color: red;
+		}
+		.dialog-win .win-footer button.green {
+			background-color: green;
+		}
+		.dialog-win .win-footer button.grey {
+			background-color: grey;
+		}
+		.btn {
+			padding: 0 10px;
+		}
+		.btn button {
+	      display: block;
+	      width: 100%;
+	      padding: 10px;
+	      margin: 20px 0px;
+	      border-radius: 10px;
+	      color: #fff;
+	      border:1px solid #eee;
+	      background: #077B01;
+	    }
+	</style>
+</head>
+<body>
+	<div class="btn">
+		<button id="btn1">没有任何参数需要手动关闭</button>
+		<button id="btn2">弹出一个不带任何按钮 警告框 2秒后关闭</button>
+		<button id="btn3">弹出一个有确认 取消 的按钮 成功框，点击按钮直接关闭</button>
+		<button id="btn4">弹出一个有确认 警告框，点击按钮不可以关闭(需要手动关闭)</button>
+		<button id="btn5">弹出一个多组合的按钮框，且按钮样式可以定制</button>
+		<button id="btn6">弹出一个确认和删除的框，点击确认弹出加载框2秒自动关闭</button>
+	</div>
+
+<!--<div class="dialog-mask">
+		<div class="dialog-win">
+			<div class="win-header warning"></div>
+			<div class="win-content">我是一个测试的和</div>
+			<div class="win-footer">
+				<button>按键1</button>
+				<button>按键2</button>
+			</div>
+		</div>
+	</div> -->
+	 <script type='application/javascript' src='js/fastclick.js'></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.js"></script>
+  	 <script src="https://cdn.jsdelivr.net/zepto/1.2.0/touch.js"></script>
+	 <script type="text/javascript" src="js/dialog.js"></script>
+	 <script>
+	 $(function() {
+	 	FastClick.attach(document.body);
+
+	// var dialog = new Dialog({
+ 	// 	type:'warning',
+ 	// 	text:'我是测试的',
+ 	// 	button:[],   
+ 	// 	btnValue:'取消', 
+ 	// 	delay:5000 
+ 	// 	})
+ 		$('#btn6').tap(function(){
+ 			new Dialog({
+	 		type:'warning',
+	 		effect:true,
+	 		text:'我是测试的',
+	 		button:[{msg:'确认',type:'green',callback:
+	 										function(){
+	 											new Dialog({
+	 												type:'warning',
+	 												text:'2秒自动关闭',
+	 												delay:2000
+	 											})
+	 										}},
+	 										{msg:'删除',type:'red'}],   
+	 		
+	 		})
+	 	})
+ 		$('#btn5').tap(function(){
+ 			new Dialog({
+	 		type:'warning',
+	 		text:'我是测试的',
+	 		button:[{msg:'确认',type:'green',callback:
+	 										function(){console.log('我可以执行任何')}},
+	 										{msg:'取消',type:'red'},
+	 										{msg:'',type:'',callback:
+	 										function(){
+	 											new Dialog({
+	 												type:'warning',
+	 												text:'我是测试的',
+	 												delay:3000
+	 											})
+	 										}}]  
+	 		// btnValue:'取消', 
+	 		// delay:2000 
+	 		})
+	 	})
+ 		$('#btn4').tap(function(){
+ 			new Dialog({
+	 		type:'warning',
+	 		text:'我是测试的',
+	 		button:[{msg:'确认',type:'green',callback:
+	 										function(){return false}}],   
+	 		// delay:2000 
+	 		})
+	 	})
+ 		$('#btn3').tap(function(){
+ 			new Dialog({
+	 		type:'ok',
+	 		text:'我是测试的',
+	 		button:[{msg:'确认',type:'green'},{msg:'取消',type:'red'}],   
+	 		maskClose:true,
+	 		maskOpacity:0.9
+	 		// delay:2000 
+	 		})
+	 	})
+
+ 		$('#btn2').tap(function(){
+ 			new Dialog({
+	 		type:'warning',
+	 		effect:true,
+	 		// text:'我是测试的',
+	 		// button:[{msg:'',type:''},{msg:'取消',type:'red'}],   
+	 		delay:2000 
+	 		})
+	 	})
+ 	 
+
+ 		$('#btn1').tap(function(){
+ 			new Dialog()
+ 		})
+
+ 		})
+	</script>
+</body>
+</html>

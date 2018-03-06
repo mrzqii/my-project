@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Map Demo</title>
+</head>
+<body>
+
+        <div id="map-wrap" style="height: 800px;">
+                <!-- 这里以后是地图 -->
+        </div>
+
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=BylgvkY0mLNZgDORtj1uUctmCfuR1tLf"></script>
+    <script src="./js/echarts.js"></script>
+    <script src="./js/bmap.js"></script>
+    <script>
+        // 初始化echarts示例mapChart
+            var mapChart = echarts.init(document.getElementById('map-wrap'));
+
+            // mapChart的配置
+            option = {
+                // 加载 bmap 组件
+                bmap: {
+                    // 百度地图中心经纬度
+                    center: [120.13066322374, 30.240018034923],
+                    // 百度地图缩放
+                    zoom: 14,
+                    // 是否开启拖拽缩放，可以只设置 'scale' 或者 'move'
+                    roam: true,
+                    // 百度地图的自定义样式 
+                    mapStyle: {}
+                },
+                series: [{
+                    type: 'scatter',
+                    // 使用百度地图坐标系
+                    coordinateSystem: 'bmap',
+                    // 数据格式跟在 geo 坐标系上一样，每一项都是 [经度，纬度，数值大小，其它维度...]
+                    data: [ [120, 30, 1] ]
+                }]
+            }
+            mapChart.setOption(option)
+
+    </script>    
+</body>
+</html>

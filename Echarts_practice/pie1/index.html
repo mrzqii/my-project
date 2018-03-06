@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Map Demo</title>
+</head>
+<body>
+        <div id="main" style="height:600px"></div>
+        <script src="./echarts.min.js"></script>
+        <script>
+            function test(echarts) {
+
+                var chart = echarts.init(document.getElementById('main'));
+
+                chart.setOption({
+                    aria: {
+                        show: true
+                    },
+                    title : {
+                        text: '淘宝用户访问来源', //主标题文本
+                        subtext: '测试测试测试',   //副标题文本
+                        left: 'center'
+                        // x:'center'  //水平剧中方式
+                    },
+                    tooltip : {  //提示框组件。
+                        trigger: 'item',
+                        // 饼图、仪表盘、漏斗图: {a}（系列名称），{b}（数据项名称），{c}（数值）, {d}（百分比）
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    legend: { //图例组件。
+                        orient: 'vertical',  //图例列表的布局朝向。
+                        left: '80%',
+                        data: ['直接访问','直通车','联盟广告','视频广告','搜索引擎']
+                    },
+                    series : [
+                        {
+                            name: '访问来源',
+                            type: 'pie', //系列列表。每个系列通过 type 决定自己的图表类型
+                            // roseType: true,
+                            radius : '55%', //饼图的半径
+                            center: ['50%', '60%'],
+                            data:[
+                                {value:335, name:'直接访问'},
+                                {value:310, name:'直通车'},
+                                {value:234, name:'联盟广告'},
+                                {value:135, name:'视频广告'},
+                                {value:1548, name:'搜索引擎'}
+                            ],
+                            itemStyle: { //图形样式
+                                emphasis: {
+                                    shadowBlur: 10,
+                                    shadowOffsetX: 0,
+                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                }
+                            }
+                        }
+                    ]
+                });
+
+                window.onresize = chart.resize;
+            }
+            test(echarts)
+        </script>
+    </body>
+</html>

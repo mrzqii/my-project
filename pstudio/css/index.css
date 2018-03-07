@@ -30,12 +30,12 @@ body {
 
 body, html {
     overflow-x: hidden;
-    // 这个属性只有在一些智能手机和平板电脑上使用。
+    /* 这个属性只有在一些智能手机和平板电脑上使用。 */
     -webkit-text-size-adjust: none;
 }
 
 input {
-    // ios端和安卓端的样式显示不一样,例如同一按钮(样式一样)会显示不一样的颜色
+    /* ios端和安卓端的样式显示不一样,例如同一按钮(样式一样)会显示不一样的颜色 */
     -webkit-appearance: none;
 }
 
@@ -586,6 +586,9 @@ input {
 }
 
 .service .t1 {
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 140px;
     padding: 210px 0 0 0;
@@ -593,10 +596,8 @@ input {
     color: #9b9797;
     font-family: Helvetica;
     text-transform: uppercase;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transition: 400ms;
+    -webkit-transition: all 400ms;
+    transition: all 400ms;
 }
 
 .service .t1 .p1 {
@@ -607,6 +608,9 @@ input {
 }
 
 .service .t2 {
+    position: absolute;
+    left: 0;
+    bottom: -98px;
     width: 100%;
     padding: 25px 0 0 0;
     height: 73px;
@@ -614,10 +618,8 @@ input {
     font-size: 14px;
     color: #fff;
     background: #7bc91e;
-    position: absolute;
-    left: 0;
-    bottom: -98px;
-    transition: 400ms;
+    -webkit-transition: all 400ms;
+    transition: all 400ms;
 }
 
 .service .li1 .t1 {
@@ -1009,70 +1011,7 @@ input {
     height: 460px;
 }
 
-.foot {
-    overflow: hidden;
-    line-height: 30px;
-    padding: 10px 0;
-    color: #929292;
-}
 
-.foot .box {
-    width: 1180px;
-    margin: 0 auto;
-}
-
-.foot .fl {
-    float: left;
-}
-
-.foot .fl p {
-    display: inline;
-}
-
-.foot .fl p a {
-    margin-right: 10px;
-    color: #929292
-}
-
-.foot .fl p a:hover {
-    color: #7bc91e
-}
-
-.foot .share {
-    height: 26px;
-    float: right;
-}
-
-.foot .share a {
-    width: 26px;
-    height: 26px;
-    line-height: 26px;
-    margin: 0 1px;
-    display: inline-block;
-    background: url(../images/shareBg.png) no-repeat -26px 0;
-}
-
-.foot .share span {
-    width: 100%;
-    height: 100%;
-    display: inline-block;
-}
-
-.foot .share .qq span {
-    background: url(../images/qq.png) no-repeat center;
-}
-
-.foot .share .weixin span {
-    background: url(../images/weixin.png) no-repeat center;
-}
-
-.foot .share .weibo span {
-    background: url(../images/weibo.png) no-repeat center;
-}
-
-.foot .share a:hover {
-    background-position: 0 0;
-}
 
 @media screen and (max-height: 840px) {
     .banner .text {
@@ -1231,10 +1170,7 @@ input {
     }
 
  
-    .foot .box {
-        width: 90%;
-        margin: 0 5%;
-    }
+
     
  li{ width:22%; height:212px; margin:0 3% 50px 0;}*/
     .workList .box {
@@ -1514,16 +1450,7 @@ input {
         height: auto;
     }
 
-    .foot .fl {
-        width: 100%;
-        line-height: 24px;
-        margin: 0 0 10px 0;
-    }
-
-    .foot .share {
-        width: 100%;
-        margin: 0;
-    }
+    
 }
 
 @media screen and (max-width: 680px) {

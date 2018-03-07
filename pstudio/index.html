@@ -9,11 +9,14 @@
         <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png"/>
         <link rel="stylesheet" type="text/css" href="css/font.css"/>
         <link rel="stylesheet" type="text/css" href="css/index.css"/>
-        <!-- [if lt IE 9]><script type="text/javascript" src="js/css3-mediaqueries.js"></script><![endif] -->
+        <link rel="stylesheet" type="text/css" href="css/base-foot-nav.css"/>
+        <!-- [if lt IE 9]>
+            <script type="text/javascript" src="js/css3-mediaqueries.js"></script>
+            <script type="text/javascript" src="js/html5shiv.js"></script>
+         <![endif] -->
         <title>DEMO-PSTUDIO</title>
-        <meta name="keywords" content="关键词"/>
-        <meta name="description" content="描述"/>
-
+        <meta name="keywords" content="seo关键词xxxxxx"/>
+        <meta name="description" content="seo描述xxxx"/>
     </head>
     <body>
         <div class="welcome">
@@ -29,6 +32,8 @@
             </div>
         </div>
         <div class="body">
+
+
             <div class="head headFirst">
                 <a href="#">
                     <div class="logo">
@@ -41,7 +46,7 @@
                 <div class="nav">
                     <ul>
                         <li>
-                            <a href="#index">
+                            <a href="">
                                 <div class="bg"></div>
                                 <div class="tBox">
                                     <div class="t1">HOME </div>
@@ -91,7 +96,7 @@
                     <div class="navMbox">
                         <ul>
                             <li>
-                                <a href="#">HOME</a>
+                                <a href="">HOME</a>
                             </li>
                             <li>
                                 <a href="#about">ABOUT</a>
@@ -110,6 +115,8 @@
                 </div>
                 <a href="#" class="navBtn"></a>
             </div>
+
+
             <div class="banner row">
                 <ul class="imgs">
                     <li>
@@ -278,34 +285,17 @@
                     </div>
                 </div>
             </div>
-            <div class="foot">
-                <div class="box">
-                    <div class="fl">
-                        <p>© 2017 PSTUDIO All Rights Reserved. 蜀ICP备12001214</p>
-                        &nbsp;&nbsp;&nbsp;
-                        <p>
-                            <a href="#" target="_blank">B2视觉</a>
-                            <a href="http://www.zbool.com.cn" target="_blank">Zbool</a>
-                            <a href="#" target="_blank">素语格</a>
-                            <a href="#" target="_blank">UhEtml</a>
-                        </p>
-                    </div>
-                    <div class="share">
-                        <a href="javascript:;" class="qq" target="_blank">
-                            <span></span>
-                        </a>
-                        <a href="javascript:;" class="weixin" target="_blank">
-                            <span></span>
-                        </a>
-                        <a href="javascript:;" class="weibo" target="_blank">
-                            <span></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <section id="foot"></section>
         </div>
       <script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
         <script>
+            
+            $(document).ready(function(){
+
+                //  $("#header").load("base-nav.html #base-nav");
+                 $("#foot").load("base-foot.html #base-foot");
+            });
+    
             var workData = [{
                 pid: 0,
                 type: 'WEB',

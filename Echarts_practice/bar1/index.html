@@ -7,7 +7,7 @@
         <title>bar Demo</title>
     </head>
 <body>
-        <div id="main" style="height:600px"></div>
+        <div id="main" style="height:400px;width:1200px"></div>
 
         <script src="./echarts.min.js"></script>
         <script>
@@ -15,61 +15,109 @@
                 var chart = echarts.init(document.getElementById('main'), null, {
                 });
                 chart.setOption({
-                    backgroundColor: '#2c343c',
+                    backgroundColor: '#0f1a2e',
                     textStyle: {
                         color: '#ccc'
                     },
+                    grid:{
+                        top: '20%',
+                        bottom: '35%'
+                    },
                     title : {
+                        // padding:[10,0,40,10],
                         text: '水厂参数总汇', //主标题文本
-                        left: 'left',
+                        left: 70,
+                        // top: '120%',
                         textStyle: {
-                            color: '#ccc'
+                            color: '#ccc',
+                             //字体风格,'normal','italic','oblique'
+                            fontStyle:'normal',
+                            //字体粗细 'normal','bold','bolder','lighter',100 | 200 | 300 | 400...
+                            fontWeight:'bold',
+                            //字体系列
+                            fontFamily:'sans-serif',
+                            //字体大小
+                    　　　　 fontSize:22
                         },
                     },
                     legend: {  //图列组件
                         data:['源水浊度','沉淀水浊度','滤后水浊度','出厂水浊度'],
-                        left:'right',
+                        left:'36%',
                         textStyle: {
-                        color: '#ccc'
-                    },
+                        color: '#ccc',
+                        fontSize:18
+                        
+                        },
+                        itemGap:80, //图列间距
+                        itemWidth: 10, //图列宽度 默认25
+                        itemHeight: 10
                     },
                     xAxis : [
                         {
                             type : 'category', //  类目轴，适用于离散的类目数据，为该类型时必须通过 data 设置类目数据。
                             data : ['水厂一','水厂二','水厂三','水厂四','水厂五','水厂六'],
+                            axisLine:{
+                                // show: false
+                                lineStyle:{
+                                    color: '#ccc'
+                                }
+                            },
+                            axisTick: {
+                                show: false
+                            }
                             
                         }
                     ],
                     yAxis : [ //直角坐标系 grid 中的 y 轴
                         {
-                            type : 'value' //数值轴，适用于连续数据。
+                            type : 'value', //数值轴，适用于连续数据。此为默认值
+                            // name :'某一项指数'
+                            axisLabel: {                   
+                                formatter: function (value, index) {           
+                                return value.toFixed(2);      
+                                }
+                            },
+                            axisLine:{
+                                show: false
+                                // lineStyle:{
+                                //     color: '#ccc'
+                                // }
+                            }
                         }
                     ],
                     series : [
                         {
                             name:'源水浊度',
+                            color: '#d83457',
                             type:'bar',
                             data:[0.07, 0.11, 0.21, 0.16, 0.23, 0.1],
-                            barGap:'1%'
+                            barGap:'1%', //同一个类目bar之间的间隙
+                            barCategoryGap: '60%' //不同类目之间的间隙
                            
                         },
                         {
                             name:'沉淀水浊度',
+                            color: '#f0a941',
                             type:'bar',
                             data:[0.17, 0.13, 0.18, 0.06, 0.13, 0.22],
-                            barGap:'1%'
+                            barGap:'1%',
+                            barCategoryGap: '60%'
                         },
                         {
                             name:'滤后水浊度',
+                            color: '#68ba92',
                             type:'bar',
                             data:[0.07, 0.15, 0.08, 0.12, 0.13, 0.2],
-                            barGap:'1%'
+                            barGap:'1%',
+                            barCategoryGap: '60%'
                         },
                         {
                             name:'出厂水浊度',
+                            color: '#47aecd',
                             type:'bar',
                             data:[0.07, 0.1, 0.18, 0.16, 0.13, 0.2],
-                            barGap:'1%'
+                            barGap:'1%',
+                            barCategoryGap: '60%'
                         },
                     ]
                 });

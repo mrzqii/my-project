@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Map Demo</title>
+    </head>
+<body>
+        <div id="main" style="height:600px"></div>
+
+        <script src="./echarts.js"></script>
+        <script>
+            function test(echarts) {
+                var chart = echarts.init(document.getElementById('main'), null, {
+                });
+                chart.setOption({
+                    backgroundColor: '#2c343c',
+                    textStyle: {
+                        color: '#ccc'
+                    },
+                    title : {
+                        text: '水厂参数总汇', //主标题文本
+                        left: 'left',
+                        textStyle: {
+                            color: '#ccc'
+                        },
+                    },
+                    legend: {  //图列组件
+                        data:['源水浊度','沉淀水浊度','滤后水浊度','出厂水浊度'],
+                        left:'right',
+                        textStyle: {
+                        color: '#ccc'
+                    },
+                    },
+                    xAxis : [
+                        {
+                            type : 'category', //  类目轴，适用于离散的类目数据，为该类型时必须通过 data 设置类目数据。
+                            data : ['水厂一','水厂二','水厂三','水厂四','水厂五','水厂六'],
+                            
+                        }
+                    ],
+                    yAxis : [ //直角坐标系 grid 中的 y 轴
+                        {
+                            type : 'value' //数值轴，适用于连续数据。
+                        }
+                    ],
+                    series : [
+                        {
+                            name:'源水浊度',
+                            type:'bar',
+                            data:[0.07, 0.11, 0.21, 0.16, 0.23, 0.1],
+                            barGap:'1%'
+                           
+                        },
+                        {
+                            name:'沉淀水浊度',
+                            type:'bar',
+                            data:[0.17, 0.13, 0.18, 0.06, 0.13, 0.22],
+                            barGap:'1%'
+                        },
+                        {
+                            name:'滤后水浊度',
+                            type:'bar',
+                            data:[0.07, 0.15, 0.08, 0.12, 0.13, 0.2],
+                            barGap:'1%'
+                        },
+                        {
+                            name:'出厂水浊度',
+                            type:'bar',
+                            data:[0.07, 0.1, 0.18, 0.16, 0.13, 0.2],
+                            barGap:'1%'
+                        },
+                    ]
+                });
+            };
+
+            test(echarts)
+
+        </script>
+ 
+    </body>
+</html>

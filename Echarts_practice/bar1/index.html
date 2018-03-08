@@ -6,6 +6,14 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>bar Demo</title>
     </head>
+
+    <style>
+        #main{
+            width: 1200px;
+            height: 400px;
+            border: 4px solid #426f90;
+        }
+    </style>
 <body>
         <div id="main" style="height:400px;width:1200px"></div>
 
@@ -15,14 +23,32 @@
                 var chart = echarts.init(document.getElementById('main'), null, {
                 });
                 chart.setOption({
-                    backgroundColor: '#0f1a2e',
+                    baseOption: {
+                        // toolbox: {
+                        //     feature: {
+                        //         myTool1: {
+                        //             show: true,
+                        //             title: '自定义扩展方法1',
+                        //             icon: 'path://M432.45,595.444c0,2.177-4.661,6.82-11.305,6.82c-6.475,0-11.306-4.567-11.306-6.82s4.852-6.812,11.306-6.812C427.841,588.632,432.452,593.191,432.45,595.444L432.45,595.444z M421.155,589.876c-3.009,0-5.448,2.495-5.448,5.572s2.439,5.572,5.448,5.572c3.01,0,5.449-2.495,5.449-5.572C426.604,592.371,424.165,589.876,421.155,589.876L421.155,589.876z M421.146,591.891c-1.916,0-3.47,1.589-3.47,3.549c0,1.959,1.554,3.548,3.47,3.548s3.469-1.589,3.469-3.548C424.614,593.479,423.062,591.891,421.146,591.891L421.146,591.891zM421.146,591.891',
+                        //             // icon: 'image://http://echarts.baidu.com/images/favicon.png',
+                        //             onclick: function (){
+                        //                 alert('myToolHandler1')
+                        //             }
+                        //         },
+                        //     }
+                        // },
+                        // timeline: {
+                            
+                        //     },
+                            backgroundColor: '#0f1a2e',
                     textStyle: {
                         color: '#ccc'
                     },
-                    grid:{
+                    grid:{ //表格的位置
                         top: '20%',
                         bottom: '35%'
                     },
+                    // timeline:show,
                     title : {
                         // padding:[10,0,40,10],
                         text: '水厂参数总汇', //主标题文本
@@ -59,12 +85,13 @@
                             axisLine:{
                                 // show: false
                                 lineStyle:{
-                                    color: '#ccc'
+                                    color: '#666'
                                 }
                             },
-                            axisTick: {
+                            axisTick: { //坐标轴刻度
                                 show: false
                             }
+                            
                             
                         }
                     ],
@@ -72,7 +99,7 @@
                         {
                             type : 'value', //数值轴，适用于连续数据。此为默认值
                             // name :'某一项指数'
-                            axisLabel: {                   
+                            axisLabel: {    //坐标上面小数点的位数               
                                 formatter: function (value, index) {           
                                 return value.toFixed(2);      
                                 }
@@ -82,6 +109,13 @@
                                 // lineStyle:{
                                 //     color: '#ccc'
                                 // }
+                            },
+                            splitLine: {  //坐标轴在 grid 区域中的分隔线。
+                                lineStyle: {
+                                    // 使用深浅的间隔色
+                                    color: '#666',
+                                    width: 2
+                                }
                             }
                         }
                     ],
@@ -91,7 +125,7 @@
                             color: '#d83457',
                             type:'bar',
                             data:[0.07, 0.11, 0.21, 0.16, 0.23, 0.1],
-                            barGap:'1%', //同一个类目bar之间的间隙
+                            barGap:'4%', //同一个类目bar之间的间隙
                             barCategoryGap: '60%' //不同类目之间的间隙
                            
                         },
@@ -100,7 +134,7 @@
                             color: '#f0a941',
                             type:'bar',
                             data:[0.17, 0.13, 0.18, 0.06, 0.13, 0.22],
-                            barGap:'1%',
+                            barGap:'4%',
                             barCategoryGap: '60%'
                         },
                         {
@@ -108,7 +142,7 @@
                             color: '#68ba92',
                             type:'bar',
                             data:[0.07, 0.15, 0.08, 0.12, 0.13, 0.2],
-                            barGap:'1%',
+                            barGap:'4%',
                             barCategoryGap: '60%'
                         },
                         {
@@ -116,10 +150,13 @@
                             color: '#47aecd',
                             type:'bar',
                             data:[0.07, 0.1, 0.18, 0.16, 0.13, 0.2],
-                            barGap:'1%',
+                            barGap:'4%',
                             barCategoryGap: '60%'
                         },
                     ]
+                        
+                        },
+                    
                 });
             };
 

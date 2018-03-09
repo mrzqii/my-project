@@ -1,168 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>bar Demo</title>
-    </head>
 
-    <style>
-        #main{
-            width: 1200px;
-            height: 400px;
-            border: 4px solid #426f90;
-        }
-    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bar Demo</title>
+</head>
+
+<style>
+    #main {
+        width: 1200px;
+        height: 400px;
+        border: 4px solid #426f90;
+    }
+</style>
+
 <body>
-        <div id="main" style="height:400px;width:1200px"></div>
+    <div id="main" style="height:400px;width:1200px"></div>
 
-        <script src="./echarts.min.js"></script>
-        <script>
-            function test(echarts) {
-                var chart = echarts.init(document.getElementById('main'), null, {
-                });
-                chart.setOption({
-                    baseOption: {
-                        // toolbox: {
-                        //     feature: {
-                        //         myTool1: {
-                        //             show: true,
-                        //             title: '自定义扩展方法1',
-                        //             icon: 'path://M432.45,595.444c0,2.177-4.661,6.82-11.305,6.82c-6.475,0-11.306-4.567-11.306-6.82s4.852-6.812,11.306-6.812C427.841,588.632,432.452,593.191,432.45,595.444L432.45,595.444z M421.155,589.876c-3.009,0-5.448,2.495-5.448,5.572s2.439,5.572,5.448,5.572c3.01,0,5.449-2.495,5.449-5.572C426.604,592.371,424.165,589.876,421.155,589.876L421.155,589.876z M421.146,591.891c-1.916,0-3.47,1.589-3.47,3.549c0,1.959,1.554,3.548,3.47,3.548s3.469-1.589,3.469-3.548C424.614,593.479,423.062,591.891,421.146,591.891L421.146,591.891zM421.146,591.891',
-                        //             // icon: 'image://http://echarts.baidu.com/images/favicon.png',
-                        //             onclick: function (){
-                        //                 alert('myToolHandler1')
-                        //             }
-                        //         },
-                        //     }
-                        // },
-                        // timeline: {
-                            
-                        //     },
-                            backgroundColor: '#0f1a2e',
+    <script src="./echarts.min.js"></script>
+    <script>
+        function test(echarts) {
+            var chart = echarts.init(document.getElementById('main'), null, {});
+            chart.setOption({
+                baseOption: {
+                    // toolbox: {
+                    //     feature: {
+                    //         myTool1: {
+                    //             show: true,
+                    //             title: '自定义扩展方法1',
+                    //             icon: 'path://M432.45,595.444c0,2.177-4.661,6.82-11.305,6.82c-6.475,0-11.306-4.567-11.306-6.82s4.852-6.812,11.306-6.812C427.841,588.632,432.452,593.191,432.45,595.444L432.45,595.444z M421.155,589.876c-3.009,0-5.448,2.495-5.448,5.572s2.439,5.572,5.448,5.572c3.01,0,5.449-2.495,5.449-5.572C426.604,592.371,424.165,589.876,421.155,589.876L421.155,589.876z M421.146,591.891c-1.916,0-3.47,1.589-3.47,3.549c0,1.959,1.554,3.548,3.47,3.548s3.469-1.589,3.469-3.548C424.614,593.479,423.062,591.891,421.146,591.891L421.146,591.891zM421.146,591.891',
+                    //             // icon: 'image://http://echarts.baidu.com/images/favicon.png',
+                    //             onclick: function (){
+                    //                 alert('myToolHandler1')
+                    //             }
+                    //         },
+                    //     }
+                    // },
+                    timeline: {
+                        width: '30%', //时间轴的长度
+                        x: 400,
+                        symbolSize: 12,
+                        data: [
+                            '2013', '2014',{ //单独配置某一个时间点的样式
+                                value: '2015',
+                                tooltip: {
+                                    // formatter: '{b} GDP达到一个高度'
+                                },
+                                symbol: 'circle', //时间点图标形状
+                                symbolSize: 12 ////时间点图标大小
+                                        }
+                        ],//控制时间轴的节点数
+                        label: {//控制时间轴节点文本的显示
+                            show:false, //是否显示文本
+                            position:'bottom',
+                            // formatter: function(s) { //显示格式
+                            //     return s.slice(0, 4);
+                            // }
+                        },
+                        symbol:'circle', //timeline 刻度点标记的图形。
+                        autoPlay: false,//禁止自动播放
+                        bottom: 35, //距离底部的位置
+                    },
+                    backgroundColor: '#0f1a2e',
                     textStyle: {
                         color: '#ccc'
                     },
-                    grid:{ //表格的位置
+                    grid: { //表格的位置
                         top: '20%',
                         bottom: '35%'
                     },
-                    // timeline:show,
-                    title : {
+                    title: {
                         // padding:[10,0,40,10],
                         text: '水厂参数总汇', //主标题文本
                         left: 70,
-                        // top: '120%',
+                        // top: 50,
                         textStyle: {
                             color: '#ccc',
-                             //字体风格,'normal','italic','oblique'
-                            fontStyle:'normal',
+                            //字体风格,'normal','italic','oblique'
+                            fontStyle: 'normal',
                             //字体粗细 'normal','bold','bolder','lighter',100 | 200 | 300 | 400...
-                            fontWeight:'bold',
+                            fontWeight: 'lighter',
                             //字体系列
-                            fontFamily:'sans-serif',
+                            fontFamily: 'sans-serif',
                             //字体大小
-                    　　　　 fontSize:22
+                            　　　　fontSize: 22
                         },
                     },
-                    legend: {  //图列组件
-                        data:['源水浊度','沉淀水浊度','滤后水浊度','出厂水浊度'],
-                        left:'36%',
+                    legend: { //图列组件
+                        data: ['源水浊度', '沉淀水浊度', '滤后水浊度', '出厂水浊度'],
+                        left: '36%',
                         textStyle: {
-                        color: '#ccc',
-                        fontSize:18
-                        
+                            color: '#ccc',
+                            fontSize: 18
+
                         },
-                        itemGap:80, //图列间距
+                        itemGap: 80, //图列间距
                         itemWidth: 10, //图列宽度 默认25
                         itemHeight: 10
                     },
-                    xAxis : [
-                        {
-                            type : 'category', //  类目轴，适用于离散的类目数据，为该类型时必须通过 data 设置类目数据。
-                            data : ['水厂一','水厂二','水厂三','水厂四','水厂五','水厂六'],
-                            axisLine:{
-                                // show: false
-                                lineStyle:{
-                                    color: '#666'
-                                }
-                            },
-                            axisTick: { //坐标轴刻度
-                                show: false
+                    xAxis: [{
+                        type: 'category', //  类目轴，适用于离散的类目数据，为该类型时必须通过 data 设置类目数据。
+                        data: ['水厂一', '水厂二', '水厂三', '水厂四', '水厂五', '水厂六'],
+                        // data: ['源水浊度', '沉淀水浊度', '滤后水浊度', '出厂水浊度'],
+                        axisLine: {
+                            // show: false
+                            lineStyle: {
+                                color: '#666'
                             }
-                            
-                            
+                        },
+                        axisTick: { //坐标轴刻度
+                            show: false
                         }
-                    ],
-                    yAxis : [ //直角坐标系 grid 中的 y 轴
+                    }],
+                    yAxis: [ //直角坐标系 grid 中的 y 轴
                         {
-                            type : 'value', //数值轴，适用于连续数据。此为默认值
+                            type: 'value', //数值轴，适用于连续数据。此为默认值
                             // name :'某一项指数'
-                            axisLabel: {    //坐标上面小数点的位数               
-                                formatter: function (value, index) {           
-                                return value.toFixed(2);      
+                            axisLabel: { //坐标上面小数点的位数               
+                                formatter: function (value, index) {
+                                    return value.toFixed(2);
                                 }
                             },
-                            axisLine:{
+                            axisLine: {
                                 show: false
                                 // lineStyle:{
                                 //     color: '#ccc'
                                 // }
                             },
-                            splitLine: {  //坐标轴在 grid 区域中的分隔线。
+                            splitLine: { //坐标轴在 grid 区域中的分隔线。
                                 lineStyle: {
-                                    // 使用深浅的间隔色
                                     color: '#666',
                                     width: 2
                                 }
                             }
                         }
                     ],
-                    series : [
-                        {
-                            name:'源水浊度',
+                    series: [{
+                            name: '源水浊度',
                             color: '#d83457',
-                            type:'bar',
-                            data:[0.07, 0.11, 0.21, 0.16, 0.23, 0.1],
-                            barGap:'4%', //同一个类目bar之间的间隙
+                            type: 'bar',
+                            // data: [0.07, 0.11, 0.21, 0.16, 0.23, 0.1],
+                            barGap: '4%', //同一个类目bar之间的间隙
                             barCategoryGap: '60%' //不同类目之间的间隙
-                           
+
                         },
                         {
-                            name:'沉淀水浊度',
+                            name: '沉淀水浊度',
                             color: '#f0a941',
-                            type:'bar',
-                            data:[0.17, 0.13, 0.18, 0.06, 0.13, 0.22],
-                            barGap:'4%',
+                            type: 'bar',
+                            // data: [0.17, 0.13, 0.18, 0.06, 0.13, 0.22],
+                            barGap: '4%',
                             barCategoryGap: '60%'
                         },
                         {
-                            name:'滤后水浊度',
+                            name: '滤后水浊度',
                             color: '#68ba92',
-                            type:'bar',
-                            data:[0.07, 0.15, 0.08, 0.12, 0.13, 0.2],
-                            barGap:'4%',
+                            type: 'bar',
+                            // data: [0.07, 0.15, 0.08, 0.12, 0.13, 0.2],
+                            barGap: '4%',
                             barCategoryGap: '60%'
                         },
                         {
-                            name:'出厂水浊度',
+                            name: '出厂水浊度',
                             color: '#47aecd',
-                            type:'bar',
-                            data:[0.07, 0.1, 0.18, 0.16, 0.13, 0.2],
-                            barGap:'4%',
+                            type: 'bar',
+                            // data: [0.07, 0.1, 0.18, 0.16, 0.13, 0.2],
+                            barGap: '4%',
                             barCategoryGap: '60%'
                         },
                     ]
-                        
-                        },
-                    
-                });
-            };
 
-            test(echarts)
+                },
+                options:[
+                    {
+                        // title:{text:'2013年的指标'}, //设置单独的名字
+                        series:[
+                            {data: [0.07, 0.11, 0.21, 0.16, 0.23, 0.1]},
+                            {data: [0.17, 0.13, 0.18, 0.06, 0.13, 0.22]},
+                            {data: [0.07, 0.15, 0.08, 0.12, 0.13, 0.2]},
+                            {data: [0.07, 0.1, 0.18, 0.16, 0.13, 0.2]}
+                        ]
+                    },{
+                        // title:{text:'2014年的指标'},
+                        series:[
+                            {data: [0.06, 0.16, 0.21, 0.16, 0.23, 0.1]},
+                            {data: [0.17, 0.13, 0.13, 0.06, 0.13, 0.22]},
+                            {data: [0.17, 0.15, 0.18, 0.12, 0.13, 0.2]},
+                            {data: [0.07, 0.1, 0.18, 0.16, 0.23, 0.2]}
+                        ]
+                    },{
+                        // title:{text:'2015年的指标'}, 
+                        series:[
+                            {data: [0.07, 0.11, 0.21, 0.16, 0.23, 0.1]},
+                            {data: [0.17, 0.13, 0.18, 0.06, 0.13, 0.22]},
+                            {data: [0.07, 0.15, 0.08, 0.12, 0.13, 0.2]},
+                            {data: [0.07, 0.14, 0.18, 0.17, 0.23, 0.12]}
+                        ]
+                    }
+                ]
 
-        </script>
- 
-    </body>
+            });
+        };
+
+        test(echarts)
+    </script>
+
+</body>
+
 </html>

@@ -41,7 +41,8 @@
                     timeline: {
                         width: '30%', //时间轴的长度
                         x: 400,
-                        symbolSize: 12,
+                        playInterval:300,
+                        loop:true,
                         data: [
                             '2013', '2014',{ //单独配置某一个时间点的样式
                                 value: '2015',
@@ -59,9 +60,27 @@
                             //     return s.slice(0, 4);
                             // }
                         },
-                        symbol:'circle', //timeline 刻度点标记的图形。
+                        symbol:'circle', //timeline 刻度点标记的图形。或者为none
+                        symbolSize: 12,
                         autoPlay: false,//禁止自动播放
                         bottom: 35, //距离底部的位置
+                        checkpointStyle:{ //小圆点的样式
+                            color: '#067dd1',
+                            borderColor: '#067dd1',
+                            borderWidth: 2
+                        },
+                        controlStyle: { //控制左右方向进度
+                        //     showNextBtn: false,
+                        //     showPrevBtn: false,
+                            // normal: {
+                            //     color: '#666',
+                            //     borderColor: '#666'
+                            // },
+                            // emphasis: {
+                            //     color: '#aaa',
+                            //     borderColor: '#aaa'
+                            // }
+                        },
                     },
                     backgroundColor: '#0f1a2e',
                     textStyle: {

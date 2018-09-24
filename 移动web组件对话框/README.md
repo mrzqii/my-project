@@ -1,7 +1,7 @@
 ## 移动web组件对话框-dialog
 
 ### 使用方法 ###
-演示：[点击](https://mrzqii.github.io/myproject/%E7%A7%BB%E5%8A%A8web%E7%BB%84%E4%BB%B6%E5%AF%B9%E8%AF%9D%E6%A1%86/)
+演示：[点击](https://mrzqii.github.io/my-project/%E7%A7%BB%E5%8A%A8web%E7%BB%84%E4%BB%B6%E5%AF%B9%E8%AF%9D%E6%A1%86/)
 
 	$("button").tap(function(){
 	new Dialog({

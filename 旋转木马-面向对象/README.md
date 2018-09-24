@@ -1,6 +1,6 @@
 ## 可配置参数的旋转木马 ##
 
-在线演示地址： [地址](https://mrzqii.github.io/myproject/%E6%97%8B%E8%BD%AC%E6%9C%A8%E9%A9%AC-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/)
+在线演示地址： [地址](https://mrzqii.github.io/my-project/%E6%97%8B%E8%BD%AC%E6%9C%A8%E9%A9%AC-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/)
 ### 面向对象的编程思想编写的一个旋转木马的插件，可以进行参数的配置来达到不同的需求 ###
 ### 熟悉了插件的封装要点，以及每个阶段this的指向 ###
 通过对容器盒子的参数data-setting来进行个性化设置：<br>

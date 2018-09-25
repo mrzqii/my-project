@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+ 
+	<title>mine</title>
+	<link rel="stylesheet" href="css/fontello.min.css">
+	
+	<style>
+		*{padding:0;margin:0;}
+		html,body {
+			/*width: 1090px;*/
+			width: 100%;
+			height: 100%;
+		}
+		.my-resume {
+			 
+			width: 80%;
+			height: 2600px;
+			margin: 50px auto 0;
+			box-shadow: 1px 0px 5px grey;
+			border: 1px solid grey;
+		}
+
+		.resume-left {
+			width: 30%;
+			height: 100%;
+			background-color: #29B6F6;
+			float: left;
+			/*width:;*/
+		}
+
+		.reseme-right {
+			width: 70%;
+			height: 100%;
+			background-color: #fff;
+			float: right;
+			/*width: ;*/
+		}
+
+
+		.my-logo {
+			width: 90%;
+			margin: 50px auto 0;
+			/*background-color: pink;*/
+			text-align: center;
+		}
+
+		.my-logo img {
+			width: 50%;
+		}
+		.my-logo h3 {
+			width: 100%;
+			color: white;
+			font-weight: 400;
+			font-size: 28px;
+		}
+
+		.my-logo h4 {
+			 font-weight: 500;
+			color: white;
+		}
+
+		.info {
+			color: white;
+			width: 90%;
+			margin-top: 50px;
+			/*background-color: pink;*/
+		}
+		.info li {
+			list-style: none;
+			margin-bottom: 50px;
+		}
+
+		.info dl {
+			text-align: left;
+		 
+		}
+		.info dd {
+			width: 240px;
+		}
+
+		.info dl dt {
+			margin-bottom: 20px;
+		}
+
+
+
+		.resume-left > p {
+			width: 80%;
+			margin: 0 auto;
+			color: #01579B;
+
+		}
+
+		.web-web {
+			text-indent: 22px;
+		}
+
+
+
+		/*右边的布局*/
+
+		.resume-right .icon-bookmark::before {
+			color: #00A1D6;
+		}
+		.resume-right {
+			float: right;
+			width: 70%;
+			box-sizing: border-box;
+			padding: 50px 30px;
+ 
+		}
+		.resume-right ul li {
+			list-style: none;
+		 
+		}
+		.fist-dl dt,
+		.second-dl dt {
+			height: 30px;
+			line-height: 30px;
+			width: 100%;
+			border-bottom: 1px solid #00A1D6;
+			margin-bottom: 20px;
+			font-size: 24px;
+			font-weight: bold;
+			color: #00A1D6;
+			font-family: "微软雅黑";
+		 
+
+		}
+
+		.fist-dl dd {
+			line-height: 30px;
+		}
+
+		.second-dl dt {
+			margin-top: 50px;
+		}
+
+
+		/*技能清单*/
+		.skill-li h3 {
+			color: #00A1D6;
+			margin: 10px 0;
+		}
+		.skill-exp li {
+			padding-left: 50px;
+			position: relative;
+			margin-bottom: 40px;
+			
+		}
+
+		.skill-exp li .circle {
+			width: 14px;
+			height: 14px;
+			background-color: #00A1D6;
+			border-radius: 100%;
+			position: absolute;
+			top: 5px;
+			left: 30px;
+		}
+
+		.skill-exp li p {
+			line-height: 23px;
+			margin: 10px 0;
+			font-size: 15px;
+		}
+
+		.skill-exp h4 a {
+		    font-size: 12px;
+		    border: 1px solid #f25d8e;
+		    padding: 1px 3px;
+		    -webkit-border-radius: 5px;
+		    border-radius: 5px;
+		    margin-left: 7px;
+		    color: #f25d8e;
+		    text-decoration: none;
+		}
+
+		.skill-exp h4 a i::before {
+			color: #f25d8e;
+		}
+
+		.font-color {
+			color: #ff3f23;
+		}
+		.end-box{
+			display: inline-block;
+			text-align: center;
+			text-decoration-line: none;
+		}
+		.my-blog{
+			width: 200px;
+			height: 200px;
+			background: url(./images/blog-1.png)
+		}
+		.my-github{
+			width: 200px;
+			height: 200px;
+			background: url(./images/github-1.png)
+		}
+		
+		.end-box span{
+			display: block;
+			color: #333
+			
+		}
+		.project{
+			display: inline-block;
+			/* width: 60px; */
+			height: 20px;
+			line-height: 20px;
+			border-radius: 50px;
+			text-decoration-line: none;
+			margin-right: 30px;
+			text-align: center;
+			padding: 0 5px;
+			color:#333
+		}
+		.color-yellow{
+			background:#f1e9ad;
+		}
+		.color-grey{
+			background: #a09393;
+    		color: #fff;
+		}
+		.color-blue{
+			background:#d3f0f9;
+		}
+
+		@media screen and (max-width: 680px) {
+			div.my-resume {
+				height: 3000px !important;
+			}
+		}
+	</style> 
+</head>
+<body>
+	<div class="my-resume">
+		<div class="resume-left">
+			<div class="my-logo">
+				<img src="images/mylogo2.png" alt="我的头像" >
+				<h3>曾奇</h3>
+				<h4>努力和勤奋是成功的基础<br>(ง •̀_•́)ง</h4>
+
+				<ul class="info ">
+					<li>
+						<dl>
+						    <dt><i class="icon-bookmark"></i>&nbsp;Contact. 联系方式</dt>
+						    <dd><i class="icon-phone-1"></i>&nbsp;电话：17340203173</dd>
+						    <dd><i class="icon-mail-alt"></i>&nbsp;邮箱：mrzqii@163.com</dd>
+						    <dd><i class="icon-qq"></i>&nbsp;QQ：136800645</dd>
+						    <dd><i class="icon-bookmark"></i>&nbsp;blog：mrzqii.github.io/</dd>
+						    <dd><i class="icon-bookmark"></i>&nbsp;github：github.com/mrzqii</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+						    <dt><i class="icon-bookmark"></i>&nbsp;Application. 应聘岗位</dt>
+						    <dd class="web-web">&nbsp;前端工程师</dd>
+
+						    
+
+						</dl>
+					</li>
+				</ul>
+			</div>
+			<p>我是一名对前端由衷热爱的前端工程师。</p><br>
+		<p>我目前正在寻找前端工程师岗位的工作机会，工作态度积极向上，乐于与大家合作和分享，我相信端正的态度决定一切。希望有机会能成为贵公司的成员。</p>
+		</div>
+
+		
+		<div class="resume-right">
+			
+			<ul>
+				<li>
+					<dl class="fist-dl">
+					    <dt>
+					    	<i class="icon-bookmark"></i>&nbsp;Basic info. 基本信息
+					    </dt>
+					    <dd>&nbsp;<strong>个人信息：</strong><span>曾奇 / 男</span> </dd>
+					    <dd>&nbsp;<strong>出生年龄：</strong><span>1988年</span> </dd>
+					    <dd>&nbsp;<strong>毕业院校：</strong><span>四川理工学院</span></dd>
+					</dl>
+				</li>
+				<li class="skill-li">
+					<dl class="second-dl">
+					    <dt><i class="icon-bookmark"></i>Skill. 技能清单</dt>
+					 </dl>
+
+                    <h3>前端</h3>
+                    <ul class="skill-exp">
+                        <li>
+                            <div class="circle"></div>
+                            <h4>HTML / CSS</h4>
+                            <p>能够编写语义化的 HTML，模块化的 CSS，完成较复杂的布局</p>
+							<p>熟悉HTML5,CSS3前端开发技术。</p>
+							<p><a class="project color-grey" href="http://47.99.93.72/yarlung-web/base/index.jsp">巡检云平台</a><a class="project color-blue" href="http://121.196.214.192/thermalenergy/">热能系统</a><a class="project color-yellow" href="https://github.com/mrzqii/my-project/tree/master/rem-shangpin">rem布局适配移动端</a><a class="project color-grey" href="https://mrzqii.github.io/vue-components/mall_display/dist/view/">电商购物网站</a><a class="project color-blue" href="https://github.com/mrzqii/my-project/tree/master/pstudio">网站PSTUDIO</a></p>
+							
+                        </li>
+                        <li>
+                            <div class="circle"></div>
+                            <h4>JavaScript</h4>
+                            <p>熟练使用原生JS,理解基本的JS运行机制和原理</p>
+							<p>熟练使用ES6</p>
+							<p><a class="project color-grey" href="https://github.com/mrzqii/my-project/tree/master/%E7%A7%BB%E5%8A%A8web%E7%BB%84%E4%BB%B6%E5%AF%B9%E8%AF%9D%E6%A1%86">web组件对话框插件</a><a class="project color-blue" href="https://github.com/mrzqii/my-project/tree/master/%E6%97%8B%E8%BD%AC%E6%9C%A8%E9%A9%AC-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1">旋转木马-面向对象</a></p>
+						</li>
+						<li>
+                            <div class="circle"></div>
+                            <h4>Vue</h4>
+                            <p>熟悉vue的操作，能通过vue进行组件化开发</p>
+                            <p>基本理解vue的运行机制和原理</p>
+                            <p><a class="project color-yellow" href="https://github.com/mrzqii/vue-qunaer">商家购物销售页面</a><a class="project color-grey" href="https://github.com/mrzqii/vue-components/tree/master/vue%E7%BB%84%E4%BB%B6%E5%8C%96">组件化开发</a><a class="project color-blue" href="https://github.com/mrzqii/vue-music-app">线上数据APP</a></p>
+						</li>
+						<li>
+                            <div class="circle"></div>
+                            <h4>微信小程序</h4>
+                            <p>熟悉微信小程序的基本语法和常见api的使用</p>
+                            <p>能通过组件化方式进行小程序的开发</p>
+                            <p><a class="project color-blue" href="https://github.com/mrzqii/wx-shumi-jiudao">书米小程序</a></p>
+                        </li>
+                        <li>
+                            <div class="circle"></div>
+                            <h4>其他</h4>
+                            <p>了解前端自动化，熟悉webpack的常见用法</p>
+                            <p>英语四级 具有阅读英语文档的能力</p>
+                            <p>熟练操作PS，能够根据美工的设计进行切图与开发</p>
+                            <p>熟练使用代码管理工具svn和git</p>
+                            <p>有良好的团队合作精神，强烈的上进心和求知欲。</p>
+                           
+                        </li>
+                    </ul>
+				</li>
+				<li class="skill-li">
+					<dl class="second-dl">
+					    <dt><i class="icon-bookmark"></i>Work Experience 工作经历</dt>
+					 </dl>
+
+                    <h3></h3>
+                    <ul class="skill-exp">
+                        
+                        <li>
+                            <div class="circle"></div>
+                            <h4>2016.12~2017.05</h4>
+                            <p><b>自学前端：</b></p>
+                            <p><b>总概：</b>这段时间辞职回家，然后开始在网上找资料，学习前端编程，通看网上的视频和资料基本掌握了大概的前端知识，然后通过《javascript权威指南》开始进行系统的学习，把之前学习的零散知识梳理了一番</p>
+                        </li>
+                        <li>
+                            <div class="circle"></div>
+                            <h4>2017.05~207.12</h4>
+                            <p><b>开始上班：</b></p>
+                            <p><b>总概：</b>在网上找了一份前端工作,主要是写页面和jQuery做网站，主要的技术栈就是jquery，期间也在利用业余的时间继续学习前端的知识，后来辞职回家继续补充自己的前端知识</p>
+                        </li>
+                        <li>
+                            <div class="circle"></div>
+                            <h4>2018.03~至今</h4>
+                            <p><b>继续上班：</b></p>
+                            <p><b>总概：</b>在一家物联网的公司做项目，主要负责地铁后台管理系统和地铁巡检系统，福建星云物联网的前端页面，启动热能项目部分模块。主要使用的技术栈是jquery,echart,vue,和baiduMap,并参与了与后端接口的讨论和设计。在自己的业余时间学习了vue的组件化开发和小程序的组件化开发</p>
+                        </li>
+                        <li>
+                            <div class="circle"></div>
+                            <h4>求职意愿</h4>
+                            <p><b>再次出发：</b></p>
+                            <p><b>总概：</b>最重要的是公司的文化和氛围，我期待加入到正能量满满的团队。</p>
+                        </li>
+
+                        <li>
+                            <a class="end-box" href="https://mrzqii.github.io">
+								<div class="my-blog" href=""></div>
+								<span>博客</span>
+							</a>
+							<a class="end-box" href="https://github.com/mrzqii">
+								<div class="my-github"></div>
+								<span>github</span>
+							</a>
+                        </li>
+                    </ul>
+                </li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

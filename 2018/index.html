@@ -16,16 +16,20 @@
 		.my-resume {
 			 
 			width: 80%;
-			height: 2800px;
+			height: 2400px;
 			margin: 50px auto 0;
 			box-shadow: 1px 0px 5px grey;
 			border: 1px solid grey;
 		}
+		a.a-item {
+			text-decoration: none;
+			color: #fff;
+		}
 
 		.resume-left {
-			width: 30%;
+			width: 35%;
 			height: 100%;
-			background-color: #29B6F6;
+			background-color: #57859a;
 			float: left;
 			/*width:;*/
 		}
@@ -89,7 +93,7 @@
 		.resume-left > p {
 			width: 80%;
 			margin: 0 auto;
-			color: #01579B;
+			color: #f1ebe4;
 
 		}
 
@@ -106,7 +110,7 @@
 		}
 		.resume-right {
 			float: right;
-			width: 70%;
+			width: 65%;
 			box-sizing: border-box;
 			padding: 50px 30px;
  
@@ -132,6 +136,7 @@
 
 		.fist-dl dd {
 			line-height: 30px;
+			text-indent: 50px;
 		}
 
 		.second-dl dt {
@@ -163,7 +168,7 @@
 
 		.skill-exp li p {
 			line-height: 23px;
-			margin: 10px 0;
+			/* margin: 10px 0; */
 			font-size: 15px;
 		}
 
@@ -228,6 +233,11 @@
 		.color-blue{
 			background:#d3f0f9;
 		}
+		p.line{
+			height: 1px;
+			background: black;
+			margin-top: 30px;
+		}
 
 		@media screen and (max-width: 680px) {
 			div.my-resume {
@@ -240,7 +250,7 @@
 	<div class="my-resume">
 		<div class="resume-left">
 			<div class="my-logo">
-				<img src="images/mylogo2.png" alt="我的头像" >
+				<img src="images/mylogo.png" alt="我的头像" >
 				<h3>曾奇</h3>
 				<h4>努力和勤奋是成功的基础<br>(ง •̀_•́)ง</h4>
 
@@ -251,8 +261,8 @@
 						    <dd><i class="icon-phone-1"></i>&nbsp;电话：17340203173</dd>
 						    <dd><i class="icon-mail-alt"></i>&nbsp;邮箱：mrzqii@163.com</dd>
 						    <dd><i class="icon-qq"></i>&nbsp;QQ：136800645</dd>
-						    <dd><i class="icon-bookmark"></i>&nbsp;blog：github.com/mrzqii/blog</dd>
-						    <dd><i class="icon-bookmark"></i>&nbsp;github：github.com/mrzqii</dd>
+						    <dd><i class="icon-bookmark"></i>&nbsp;blog：<a class="a-item" href="https://github.com/mrzqii/blog">github.com/mrzqii/blog</a></dd>
+						    <dd><i class="icon-bookmark"></i>&nbsp;github：<a class="a-item" href="https://github.com/mrzqii">github.com/mrzqii</a></dd>
 						</dl>
 					</li>
 					<li>
@@ -296,7 +306,7 @@
                             <div class="circle"></div>
                             <h4>HTML / CSS</h4>
                             <p>能够编写语义化的 HTML，完成较复杂的布局</p>
-							<p>熟悉HTML5,CSS3前端开发技术。</p>
+							<p>熟悉HTML5,CSS3前端开发技术</p>
 							<p>熟悉使用stylus预处理器</p>
 							<p><a class="project color-yellow" href="https://github.com/mrzqii/my-project/tree/master/rem-shangpin">rem布局适配移动端</a><a class="project color-grey" href="https://mrzqii.github.io/vue-components/mall_display/dist/view/">电商购物网站</a><a class="project color-blue" href="https://github.com/mrzqii/my-project/tree/master/pstudio">网站PSTUDIO</a></p>
 							
@@ -315,7 +325,7 @@
                             <p>熟悉vue的操作，能通过vue进行组件化开发</p>
                             <p>熟悉通过vue进行单页面应用的开发</p>
 							<p><a class="project color-yellow" href="https://github.com/mrzqii/vue-qunaer">商家购物销售页面</a><a class="project color-grey" href="https://github.com/mrzqii/vue-components/tree/master/vue%E7%BB%84%E4%BB%B6%E5%8C%96">组件化开发</a>
-								<!-- <a class="project color-blue" href="https://github.com/mrzqii/vue-music-app">线上数据APP</a> -->
+						 
 							</p>
 						</li>
 						<li>
@@ -339,7 +349,7 @@
                             <p>英语四级 具有阅读英语文档的能力</p>
                             <p>熟练操作PS，能够根据美工的设计进行切图与开发</p>
                             <p>熟练使用代码管理工具svn和git</p>
-                            <p>有良好的团队合作精神，强烈的上进心和求知欲。</p>
+                            <p>有良好的团队合作精神，强烈的上进心和求知欲</p>
                            
                         </li>
                     </ul>
@@ -351,39 +361,43 @@
 
                     <h3></h3>
                     <ul class="skill-exp">
-                        
                         <li>
                             <div class="circle"></div>
-                            <h4>2016.12~2017.05</h4>
-                            <p><b>入门前端：</b></p>
-                            <p><b>总概：</b>大学学的是化工专业，毕业以后做过淘宝店主，做过淘宝运营，因为做淘宝期间涉及了店铺装修美化这些工作，对网页比较熟悉，所以最后入了前端这一行。16年上过一段时间的班，感觉每天浑浑噩噩的，然后就辞职回家，开始学习前端。然后开始在网上找资料，学习前端编程，通过看网上的视频和资料基本掌握了前端的一些基础知识，然后通过《javascript权威指南》《javascript高级程序设计》开始进行系统的学习，把之前学习的零散知识梳理了一番。</p>
-                        </li>
-                        <li>
-                            <div class="circle"></div>
-                            <h4>2017.05~至今</h4>
-                            <p><b>成都雅鲁科技有限公司</b></p>
-                            <p><b>总概：</b>在一家物联网的公司做项目，前前后后涉及了几个项目，期间利用业余的时间学习了微信小程序开发，vue组件化开发的前端知识</p>
-                            <p><b>项目一:福州地铁后台管理系统</b>&nbsp;该系统主要功能是主任对工程师以及各个工班进行任务派发和管理，对任务的各个状态进行统计。主要技术栈是jQuery + ajax,通过和后端通讯完成任务的分配、编辑、删除等操作，以及各种年度任务的展示。</p>
-                            <p><b>项目二:福州地铁巡检系统</b>&nbsp;该系统是web端和APP端配合使用，我负责web端，对福州地铁各个站点的资产进行管理，任务进行分配，巡检进行展示，二维码和报表的展示，巡检人员位置定位，各个统计数据进行图形化展示。主要技术栈是jQuery + datatables + Echarts + baiduMap + layui,配合后端同学参与接口的设计，完成了注册登录模块、巡检模块、报表系统模块、二维码模块</p>
-                            <p><b>项目三:星云大数据平台网站首页</b>&nbsp;星云大数据网站的官网页面，主要内容是对网站进行简介以及提供其他功能的一个入口，技术栈 html5 + css3 + bootstrap + jQuery</p>
-                            <p><b>项目四:大数据信息公共平台</b>&nbsp;作为一个平台级的产品主要给客户提供全面的大数据服务，技术栈 vue + layui + jQuery + ECharts + baiduMap。我主要负责云平台工单模块和服务器管理和服务器监控模块。</p>
+							<h4>2016.11~至今 &nbsp;<b>&nbsp;成都雅鲁科技有限公司</b></h4>
+                            <p class="line"></p>
+                             
+							<p><b>福州地铁后台管理系统</b>&nbsp;</p>
+							<p>➤<b>项目描述：</b>&nbsp;主要功能是主任对工程师以及各个工班进行任务的派发、管理和统计</p>
+							<p>➤<b>项目职责：</b>&nbsp;</p>
+							<p>1. 负责页面的布局, 使用Bootstrap进行响应式页面设计</p>
+							<p>2. 使用jQuery对页面元素的操作和各种交互的设计</p>
+							<p>3. 通过AJAX与后台交互, 实现任务的增、删、改、查</p>
+							<p>4. 使用ECharts对任务进行数据可视化展示</p>
+							<p>➤<b>项目学习总结：</b>&nbsp;通过利用LocalStorage减少http请求优化速度, 加强与用户的交互, 提升体验</p>
+							<p class="line"></p>
+							<p><b>福州地铁运维系统</b>&nbsp;</p>
+							<p>➤<b>项目描述：</b>&nbsp;同事离职, 由我接替工作,整个项目分为资产管理模块、报表模块、二维码模块、巡检模块、GIS(地理信息)模块、账户模块</p>
+							<p>➤<b>项目职责：</b>&nbsp;</p>
+							<p>1. 完成剩余的资产管理模块、报表模块、二维码模块、巡检模块、GIS(地理信息)模块</p>
+							<p>2. 使用jQuery+datatables实现页面各种表格的展示,表格的分页,搜索,条件查询功能</p>
+							<p>3. 通过AJAX与后台交互, 配合移动APP对二维码的数据进行生成和展示</p>
+							<p>4. 使用ECharts对巡检模块数据可视化展示</p>
+							<p>5. 使用BaiduMap对地铁站点位置,地铁巡检人员位置,每个地铁的资产进行入口展示</p>
+							<p>➤<b>项目学习总结：</b>&nbsp;对于复杂项目需要合理的规划结构, 以便于后期维护和优化</p>
+							<p class="line"></p>
+							<p><b>星云大数据企业服务平台</b>&nbsp;</p>
+							<p>➤<b>项目描述：</b>&nbsp;为企业提供SaaS平台, 主要对配电、水务相关企业进行软件、硬件定制化</p>
+							<p>➤<b>项目职责：</b>&nbsp;</p>
+							<p>1. 对平台租户的层级、角色进行管理主要使用vue对界面渲染</p>
+							<p>2. 完成配电云和水务平台的工单模块和巡检模块的开发</p>
+							<p>3. 将硬件设备监控的数据经过处理, 展示到页面中。并支持查询和筛选。主要使用datatables+ECharts</p>
+							<p>➤<b>项目学习总结：</b>&nbsp;对常用模块的功能尽量做到可复用性, 预留统一的接口, 需要复用的组件内部不要写入具体的逻辑, 只需要暴露出接口</p>
                         </li>
                         <!-- <li>
                             <div class="circle"></div>
                             <h4>求职意愿</h4>
                             <p><b></b></p>
                         </li> -->
-
-                        <li>
-                            <a class="end-box" href="https://github.com/mrzqii/blog">
-								<div class="my-blog" href=""></div>
-								<span>博客</span>
-							</a>
-							<a class="end-box" href="https://github.com/mrzqii">
-								<div class="my-github"></div>
-								<span>github</span>
-							</a>
-                        </li>
                     </ul>
                 </li>
 			</ul>
